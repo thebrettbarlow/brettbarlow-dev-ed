@@ -55,7 +55,7 @@ jobs:
 
       - name: Deploy to Salesforce
         run: |
-          sfdx force:source \
+          sfdx force:source:deploy \
             --testlevel=RunLocalTests \
             --sourcepath=force-app \
             --targetusername=devhub
