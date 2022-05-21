@@ -1,0 +1,61 @@
+# Workflow to deploy code to Salesforce.
+name: Salesforce
+
+# TODO(brettbarlow): Add a job for linting and static analysis
+# TODO(brettbarlow): Run apex tests and collect code coverage information
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'force-app/**'
+
+jobs:
+  deploy-to-salesforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v3
+
+      - name: Install SFDX
+        run: |
+          wget https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-x64.tar.xz
+          mkdir ~/sfdx
+          tar xJf sfdx-linux-x64.tar.xz -C ~/sfdx --strip-components 1
+          echo "$HOME/sfdx/bin" >> $GITHUB_PATH
+          sfdx --version
+
+      - name: Connect to Salesforce
+        run: |
+          echo ${{ secrets.SFDX_AUTH_URL }} > sfdxurlfile.txt
+          sfdx auth:sfdxurl:store \
+            --sfdxurlfile=sfdxurlfile.txt \
+            --setalias=devhub
+
+      - name: Create Scratch Org
+        run: |
+          sfdx force:org:create \
+            --definitionfile=config/project-scratch-def.json \
+            --setalias=scratch-org \
+            --targetdevhubusername=devhub
+
+      - name: Push to Scratch Org
+        run: |
+          sfdx force:source:push \
+            --targetusername=scratch-org
+      
+      - name: Delete Scratch Org
+        if: always()
+        run: |
+          sfdx force:org:delete \
+            --targetusername=scratch-org \
+            --noprompt
+
+      - name: Deploy to Salesforce
+        run: |
+          sfdx force:source \
+            --testlevel=RunLocalTests \
+            --sourcepath=force-app \
+            --targetusername=devhub
