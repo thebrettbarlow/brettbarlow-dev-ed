@@ -6,6 +6,8 @@ name: Salesforce
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '30 10 * * *'  # 10:30 UTC == 03:30 PT
   push:
     branches:
       - main
