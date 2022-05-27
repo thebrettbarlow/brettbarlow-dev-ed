@@ -7,12 +7,12 @@ name: Salesforce
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 10 * * *'  # 10:30 UTC == 03:30 PT
+    - cron: "30 10 * * *" # 10:30 UTC == 03:30 PT
   push:
     branches:
       - main
     paths:
-      - 'force-app/**'
+      - "force-app/**"
 
 jobs:
   deploy-to-salesforce:
@@ -43,11 +43,27 @@ jobs:
             --setalias=scratch-org \
             --targetdevhubusername=devhub
 
-      - name: Push to Scratch Org
+      - name: Make the Experience Cloud Site
         run: |
-          sfdx force:source:push \
-            --targetusername=scratch-org
-      
+          sfdx force:community:create \
+            --targetusername=scratch-org \
+            --name=Home \
+            --urlpathprefix="" \
+            --templatename="Build Your Own (LWR)" \
+            templateParams.AuthenticationType=UNAUTHENTICATED
+
+      - name: Deploy Base Metadata
+        run: |
+          sfdx force:source:deploy \
+            --targetusername=scratch-org \
+            --metadata=ApexClass,Layout,Flexipage,CustomObject,LightningComponentBundle,StaticResource,CustomTab,PermissionSet,ApexPage,AuraDefinitionBundle
+
+      - name: Deploy Experience Cloud Metadata
+        run: |
+          sfdx force:source:deploy \
+            --targetusername=scratch-org \
+            --metadata=CustomSite,ExperienceBundle,NavigationMenu,Network,Profile
+
       - name: Delete Scratch Org
         if: always()
         run: |

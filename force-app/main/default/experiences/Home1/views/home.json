@@ -1,0 +1,96 @@
+{
+  "appPageId" : "cfd907ec-2754-4dca-845c-05387d321569",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "id" : "036e191e-0dd7-480a-bed8-ff3e91d42519",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"dc454293-7706-4fe0-8621-23d81fe9137c\",\"columns\":[{\"UUID\":\"1b0739ed-d146-4e7d-9a2a-5643512d638d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "dc454293-7706-4fe0-8621-23d81fe9137c",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "backgroundColor" : "",
+            "paddingHorizontal" : "none",
+            "paddingVertical" : "none",
+            "text" : "Brett Barlow",
+            "textAlign" : "center",
+            "textDecoration" : "{}",
+            "textDisplayInfo" : "{\"textStyle\":\"heading-large\",\"headingTag\":\"h2\"}"
+          },
+          "componentName" : "dxp_base:textBlock",
+          "id" : "6187d257-37bd-49c3-af95-c1d3bc3a465b",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "backgroundColor" : "",
+            "paddingHorizontal" : "none",
+            "paddingVertical" : "none",
+            "text" : "Salesforce Engineer",
+            "textAlign" : "center",
+            "textDecoration" : "{}",
+            "textDisplayInfo" : "{}"
+          },
+          "componentName" : "dxp_base:textBlock",
+          "id" : "9c4b4d8e-d941-4a4c-9339-b423ddad25f4",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "alignment" : "center",
+            "size" : "standard",
+            "stretch" : "standard",
+            "text" : "GitHub",
+            "type" : "primary",
+            "url" : "https://github.com/thebrettbarlow"
+          },
+          "componentName" : "dxp_base:button",
+          "id" : "473153c4-64fb-4df4-9002-ee0cc333d751",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "1b0739ed-d146-4e7d-9a2a-5643512d638d",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "5c79287a-6bb6-45ff-a896-dbfe2a88f0fb",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "Home",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "563ead5b-5b70-43cf-b31e-d3c698f75939",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9be751c0-6a7d-48c8-bcfe-03fbf042fa44",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}
