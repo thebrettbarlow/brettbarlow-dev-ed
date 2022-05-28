@@ -7,6 +7,6 @@
   ],
   "name": "brettbarlow-dev-ed",
   "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sfdcLoginUrl": "https://brettbarlow-dev-ed.lightning.force.com/",
   "sourceApiVersion": "54.0"
 }

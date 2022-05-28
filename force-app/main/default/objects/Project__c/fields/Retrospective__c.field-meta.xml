@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Retrospective__c</fullName>
-    <description>Summary of how the project went. Should include key takeaways. For example: What did we learn? What went well? Did anything unexpected happen?</description>
+    <description
+  >Summary of how the project went. Should include key takeaways. For example: What did we learn? What went well? Did anything unexpected happen?</description>
     <externalId>false</externalId>
     <label>Retrospective</label>
     <length>32768</length>
