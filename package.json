@@ -1,0 +1,49 @@
+{
+  "name": "brettbarlow-dev-ed",
+  "version": "1.0.0",
+  "description": "Brett Barlow's Salesforce Developer Org",
+  "scripts": {
+    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
+    "postinstall": "node bin/check-version.js && husky install",
+    "precommit": "npm run prettier"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thebrettbarlow/brettbarlow-dev-ed.git"
+  },
+  "keywords": [
+    "salesforce",
+    "apex",
+    "lwc"
+  ],
+  "author": "thebrettbarlow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thebrettbarlow/brettbarlow-dev-ed/issues"
+  },
+  "homepage": "https://github.com/thebrettbarlow/brettbarlow-dev-ed#readme",
+  "engines": {
+    "node": ">= 14.15.0",
+    "npm": ">= 6.5.0"
+  },
+  "devDependencies": {
+    "@lwc/eslint-plugin-lwc": "^1.1.0",
+    "@prettier/plugin-xml": "^1.1.0",
+    "@sa11y/jest": "^3.0.0",
+    "@salesforce/eslint-config-lwc": "^2.2.0",
+    "@salesforce/eslint-plugin-aura": "^2.0.0",
+    "@salesforce/eslint-plugin-lightning": "^0.1.1",
+    "@salesforce/sfdx-lwc-jest": "^1.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^24.5.0",
+    "husky": "^7.0.2",
+    "jest-canvas-mock": "^2.3.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
+    "prettier-plugin-apex": "^1.10.0",
+    "semver": "^7.3.5"
+  }
+}

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <CustomSite xmlns="http://soap.sforce.com/2006/04/metadata">
     <active>true</active>
     <allowHomePage>false</allowHomePage>
@@ -10,7 +10,8 @@
     <authorizationRequiredPage>CommunitiesLogin</authorizationRequiredPage>
     <bandwidthExceededPage>BandwidthExceeded</bandwidthExceededPage>
     <browserXssProtection>true</browserXssProtection>
-    <cachePublicVisualforcePagesInProxyServers>true</cachePublicVisualforcePagesInProxyServers>
+    <cachePublicVisualforcePagesInProxyServers
+  >true</cachePublicVisualforcePagesInProxyServers>
     <clickjackProtectionLevel>SameOriginOnly</clickjackProtectionLevel>
     <contentSniffingProtection>true</contentSniffingProtection>
     <enableAuraRequests>true</enableAuraRequests>
@@ -20,11 +21,13 @@
     <indexPage>CommunitiesLanding</indexPage>
     <masterLabel>Home</masterLabel>
     <redirectToCustomDomain>false</redirectToCustomDomain>
-    <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
+    <referrerPolicyOriginWhenCrossOrigin
+  >true</referrerPolicyOriginWhenCrossOrigin>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
     <serverIsDown>SNA_Home1_sf_default_cdn_lU2cI</serverIsDown>
     <siteAdmin>me@brettbarlow.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>me@brettbarlow.com</siteGuestRecordDefaultOwner>
+    <siteGuestRecordDefaultOwner
+  >me@brettbarlow.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <urlPathPrefix>visualforce</urlPathPrefix>
 </CustomSite>
