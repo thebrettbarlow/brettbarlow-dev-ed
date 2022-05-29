@@ -26,6 +26,16 @@ global with sharing class NavigationMenuItemsController {
     }
 
     String networkId = Network.getNetworkId();
+    if (Test.isRunningTest()) {
+      for (NavigationLinkSet navigationLinkSet : [
+        SELECT NetworkId
+        FROM NavigationLinkSet
+        LIMIT 1
+      ]) {
+        networkId = navigationLinkSet.NetworkId;
+        break;
+      }
+    }
 
     // find the link set belonging to the navigation menuName and active networkId
     List<NavigationLinkSet> linkSets = [
