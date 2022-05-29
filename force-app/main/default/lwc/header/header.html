@@ -1,0 +1,89 @@
+<template>
+  <template if:true={showHamburgerMenu}>
+    <div class="slds-is-fixed slds-grid hamburger-menu-container">
+      <div class="slds-col slds-size_5-of-6">
+        <div
+          class="
+            slds-grid
+            slds-var-p-left_small
+            slds-var-p-top_small
+            slds-grid_vertical
+            hamburger-menu
+          "
+        >
+          <div class="slds-col slds-var-p-left_medium">
+            <a
+              class="slds-text-link_reset"
+              href={href}
+              onclick={navigateHomeFromHamburgerMenu}
+            >
+              <h1 class="slds-text-heading_large slds-text-color_inverse">
+                BB
+              </h1>
+            </a>
+          </div>
+          <div class="slds-col">
+            <nav role="navigation" class="slds-nav-vertical">
+              <ul class="slds-has-block-links_space">
+                <template for:each={menuItems} for:item="item">
+                  <li key={item.id} class="navbar-items">
+                    <c-navigation-menu-item
+                      item={item}
+                      onnavigation={closeHamburgerMenu}
+                    ></c-navigation-menu-item>
+                  </li>
+                </template>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="slds-col slds-size_1-of-6">
+        <a href={href} onclick={handleHamburgerMenuToggle}
+          ><img
+            class="
+              hamburger-menu-icon
+              slds-var-p-left_small
+              slds-var-p-top_small
+            "
+            src={xIcon}
+        /></a>
+      </div>
+    </div>
+  </template>
+  <div class="slds-grid">
+    <div class="slds-col_bump-right">
+      <a class="slds-text-link_reset" href={href} onclick={navigateHome}>
+        <h1 class="slds-text-heading_large">Brett Barlow</h1>
+      </a>
+    </div>
+    <div class="slds-col slds-show_medium">
+      <nav role="navigation">
+        <ul class="slds-grid slds-grid_align-end slds-has-block-links_space">
+          <template for:each={menuItems} for:item="item">
+            <li key={item.id} class="navbar-items">
+              <c-navigation-menu-item item={item}></c-navigation-menu-item>
+            </li>
+          </template>
+        </ul>
+      </nav>
+    </div>
+    <template if:false={showHamburgerMenu}>
+      <div
+        class="
+          slds-col
+          slds-var-p-top_small
+          slds-var-p-right_small
+          slds-hide_medium
+        "
+      >
+        <a
+          class="slds-float_right"
+          href={href}
+          onclick={handleHamburgerMenuToggle}
+          ><img class="hamburger-menu-icon" src={hamburgerIcon}
+        /></a>
+      </div>
+    </template>
+  </div>
+</template>

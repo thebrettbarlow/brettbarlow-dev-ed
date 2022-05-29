@@ -1,0 +1,20 @@
+<template>
+  <div class="footer">
+    <nav role="navigation">
+      <ul
+        class="
+          slds-grid slds-grid_align-center
+          slds-gutters slds-wrap
+          slds-has-block-links_space
+        "
+      >
+        <template for:each={menuItems} for:item="item">
+          <li key={item.id}>
+            <c-navigation-menu-item item={item}></c-navigation-menu-item>
+          </li>
+        </template>
+      </ul>
+    </nav>
+    <p class="slds-text-align_center">Built by Brett Barlow</p>
+  </div>
+</template>

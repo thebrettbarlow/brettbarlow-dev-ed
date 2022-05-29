@@ -4,10 +4,17 @@
     <containerType>Network</containerType>
     <label>Default Navigation</label>
     <navigationMenuItem>
-        <label>Topics</label>
+        <label>About</label>
         <position>1</position>
         <publiclyAvailable>true</publiclyAvailable>
-        <target>ShowMoreTopics</target>
-        <type>NavigationalTopic</type>
+        <target>/about</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>Contact</label>
+        <position>2</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/contact</target>
+        <type>InternalLink</type>
     </navigationMenuItem>
 </NavigationMenu>

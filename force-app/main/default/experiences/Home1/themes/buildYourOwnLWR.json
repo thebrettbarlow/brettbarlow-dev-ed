@@ -28,6 +28,17 @@
               "id": "6cc9c381-1c4e-4c03-aace-1a11c34ee4e8",
               "regions": [
                 {
+                  "components": [
+                    {
+                      "componentAttributes": {
+                        "navigationMenu": "Default_Navigation"
+                      },
+                      "componentName": "c:header",
+                      "id": "42f6ce03-426b-457e-9597-c6a67e195766",
+                      "renditionMap": {},
+                      "type": "component"
+                    }
+                  ],
                   "id": "239a22f5-590a-472e-86bb-42c8fd72abe3",
                   "regionLabel": "Theme Header",
                   "regionName": "headerSection",
@@ -56,6 +67,17 @@
               "id": "0e39f220-8f1b-471c-8ce4-de4938211bba",
               "regions": [
                 {
+                  "components": [
+                    {
+                      "componentAttributes": {
+                        "navigationMenu": "External_Links"
+                      },
+                      "componentName": "c:footer",
+                      "id": "0623d090-ea90-4440-9dd8-7fccb459acff",
+                      "renditionMap": {},
+                      "type": "component"
+                    }
+                  ],
                   "id": "e9855c41-2a34-4ffa-8026-8064500dbeb0",
                   "regionLabel": "Theme Footer",
                   "regionName": "footerSection",

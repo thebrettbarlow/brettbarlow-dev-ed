@@ -7,6 +7,21 @@ public with sharing class LightningLoginFormControllerTest {
   }
 
   @IsTest
+  static void loginFailsWithNoCredentials() {
+    String username = 'username';
+    String password = 'password';
+    String startUrl = '';
+
+    String message = LightningLoginFormController.login(
+      username,
+      password,
+      startUrl
+    );
+
+    System.assertEquals(null, message, 'Expected no error message.');
+  }
+
+  @IsTest
   static void testIsUsernamePasswordEnabled() {
     List<Organization> organizations = [SELECT IsSandbox FROM Organization];
     if (organizations.size() != 1) {
