@@ -62,16 +62,13 @@ export default class NavigationMenuItem extends NavigationMixin(
     }
   }
 
-  handleNavigation() {
-    this.dispatchEvent(new CustomEvent('navigation'));
-  }
-
   handleClick(evt) {
-    // use the NavigationMixin from lightning/navigation to perform the navigation.
     evt.stopPropagation();
     evt.preventDefault();
-    this.handleNavigation();
+
     if (this.pageReference) {
+      // Tells the parent component that it can close the hamburger menu if needed
+      this.dispatchEvent(new CustomEvent('navigation'));
       this[NavigationMixin.Navigate](this.pageReference);
     } else {
       console.log(

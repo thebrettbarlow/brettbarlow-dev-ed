@@ -74,7 +74,7 @@ export default class Header extends NavigationMixin(LightningElement) {
     }
   }
 
-  handleClick(evt) {
+  navigateHome(evt) {
     evt.stopPropagation();
     evt.preventDefault();
     this[NavigationMixin.Navigate]({
@@ -93,5 +93,15 @@ export default class Header extends NavigationMixin(LightningElement) {
     } else {
       this.showHamburgerMenu = true;
     }
+  }
+
+  navigateHomeFromHamburgerMenu(event) {
+    this.navigateHome(event);
+    this.showHamburgerMenu = false;
+  }
+
+  closeHamburgerMenu(event) {
+    event.stopPropagation();
+    this.showHamburgerMenu = false;
   }
 }

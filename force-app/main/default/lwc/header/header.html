@@ -12,26 +12,29 @@
           "
         >
           <div class="slds-col slds-var-p-left_medium">
-            <a class="slds-text-link_reset" href={href} onclick={handleClick}>
+            <a
+              class="slds-text-link_reset"
+              href={href}
+              onclick={navigateHomeFromHamburgerMenu}
+            >
               <h1 class="slds-text-heading_large slds-text-color_inverse">
                 BB
               </h1>
             </a>
           </div>
           <div class="slds-col">
-            <span>
-              <nav role="navigation" class="slds-nav-vertical">
-                <ul class="slds-has-block-links_space">
-                  <template for:each={menuItems} for:item="item">
-                    <li key={item.id} class="navbar-items">
-                      <c-navigation-menu-item
-                        item={item}
-                      ></c-navigation-menu-item>
-                    </li>
-                  </template>
-                </ul>
-              </nav>
-            </span>
+            <nav role="navigation" class="slds-nav-vertical">
+              <ul class="slds-has-block-links_space">
+                <template for:each={menuItems} for:item="item">
+                  <li key={item.id} class="navbar-items">
+                    <c-navigation-menu-item
+                      item={item}
+                      onnavigation={closeHamburgerMenu}
+                    ></c-navigation-menu-item>
+                  </li>
+                </template>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
@@ -50,24 +53,20 @@
   </template>
   <div class="slds-grid">
     <div class="slds-col_bump-right">
-      <span>
-        <a class="slds-text-link_reset" href={href} onclick={handleClick}>
-          <h1 class="slds-text-heading_large">Brett Barlow</h1>
-        </a>
-      </span>
+      <a class="slds-text-link_reset" href={href} onclick={navigateHome}>
+        <h1 class="slds-text-heading_large">Brett Barlow</h1>
+      </a>
     </div>
     <div class="slds-col slds-show_medium">
-      <span>
-        <nav role="navigation">
-          <ul class="slds-grid slds-grid_align-end slds-has-block-links_space">
-            <template for:each={menuItems} for:item="item">
-              <li key={item.id} class="navbar-items">
-                <c-navigation-menu-item item={item}></c-navigation-menu-item>
-              </li>
-            </template>
-          </ul>
-        </nav>
-      </span>
+      <nav role="navigation">
+        <ul class="slds-grid slds-grid_align-end slds-has-block-links_space">
+          <template for:each={menuItems} for:item="item">
+            <li key={item.id} class="navbar-items">
+              <c-navigation-menu-item item={item}></c-navigation-menu-item>
+            </li>
+          </template>
+        </ul>
+      </nav>
     </div>
     <template if:false={showHamburgerMenu}>
       <div
