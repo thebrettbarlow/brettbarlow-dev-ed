@@ -1,10 +1,10 @@
 {
-  "activeViewId" : "aa241cac-85b9-4eeb-a5ed-e758a82b6d14",
-  "appPageId" : "cfd907ec-2754-4dca-845c-05387d321569",
-  "configurationTags" : [ "allow-in-static-site" ],
-  "id" : "f1dcdf70-9c0c-4cac-b3db-0c7895df5128",
-  "label" : "Service Not Available",
-  "routeType" : "service-not-available",
-  "type" : "route",
-  "urlPrefix" : "service-not-available"
+  "activeViewId": "aa241cac-85b9-4eeb-a5ed-e758a82b6d14",
+  "appPageId": "cfd907ec-2754-4dca-845c-05387d321569",
+  "configurationTags": ["allow-in-static-site"],
+  "id": "f1dcdf70-9c0c-4cac-b3db-0c7895df5128",
+  "label": "Service Not Available",
+  "routeType": "service-not-available",
+  "type": "route",
+  "urlPrefix": "service-not-available"
 }

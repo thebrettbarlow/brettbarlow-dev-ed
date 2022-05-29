@@ -1,59 +1,70 @@
 {
-  "appPageId" : "cfd907ec-2754-4dca-845c-05387d321569",
-  "componentName" : "community_layout:sldsFlexibleLayout",
-  "id" : "cfa1e1ad-942b-4ae9-be92-93b5a6c7dcb9",
-  "label" : "Contact",
-  "regions" : [ {
-    "components" : [ {
-      "componentAttributes" : {
-        "backgroundImageConfig" : "",
-        "backgroundImageOverlay" : "rgba(0,0,0,0)",
-        "sectionConfig" : "{\"UUID\":\"6483979d-c332-4c01-957f-8021a2a7f33a\",\"columns\":[{\"UUID\":\"94e11e4b-e3c9-4700-bfa4-e48651a5b669\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
-      },
-      "componentName" : "community_layout:section",
-      "id" : "6483979d-c332-4c01-957f-8021a2a7f33a",
-      "regions" : [ {
-        "components" : [ {
-          "componentAttributes" : { },
-          "componentName" : "c:contact",
-          "id" : "59823cf5-3b34-4f4d-8731-c96d9b3ea779",
-          "renderPriority" : "NEUTRAL",
-          "renditionMap" : { },
-          "type" : "component"
-        } ],
-        "id" : "94e11e4b-e3c9-4700-bfa4-e48651a5b669",
-        "regionLabel" : "Column 1",
-        "regionName" : "col1",
-        "renditionMap" : { },
-        "type" : "region"
-      } ],
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "scopedBrandingSetId" : null,
-      "type" : "component"
-    } ],
-    "id" : "e1686540-44ba-4d1a-a277-dedc65b14e5d",
-    "regionName" : "content",
-    "type" : "region"
-  }, {
-    "components" : [ {
-      "componentAttributes" : {
-        "customHeadTags" : "",
-        "description" : "",
-        "pageTitle" : "Contact",
-        "recordId" : "{!recordId}"
-      },
-      "componentName" : "community_builder:seoAssistant",
-      "id" : "f7b2c59b-9bc7-4b4e-89aa-84bbaaeeaf98",
-      "renderPriority" : "NEUTRAL",
-      "renditionMap" : { },
-      "type" : "component"
-    } ],
-    "id" : "2a2f44cf-582f-4766-848b-5296a174f340",
-    "regionName" : "sfdcHiddenRegion",
-    "type" : "region"
-  } ],
-  "themeLayoutType" : "Inner",
-  "type" : "view",
-  "viewType" : "custom-contact"
+  "appPageId": "cfd907ec-2754-4dca-845c-05387d321569",
+  "componentName": "community_layout:sldsFlexibleLayout",
+  "id": "cfa1e1ad-942b-4ae9-be92-93b5a6c7dcb9",
+  "label": "Contact",
+  "regions": [
+    {
+      "components": [
+        {
+          "componentAttributes": {
+            "backgroundImageConfig": "",
+            "backgroundImageOverlay": "rgba(0,0,0,0)",
+            "sectionConfig": "{\"UUID\":\"6483979d-c332-4c01-957f-8021a2a7f33a\",\"columns\":[{\"UUID\":\"94e11e4b-e3c9-4700-bfa4-e48651a5b669\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+          },
+          "componentName": "community_layout:section",
+          "id": "6483979d-c332-4c01-957f-8021a2a7f33a",
+          "regions": [
+            {
+              "components": [
+                {
+                  "componentAttributes": {},
+                  "componentName": "c:contact",
+                  "id": "59823cf5-3b34-4f4d-8731-c96d9b3ea779",
+                  "renderPriority": "NEUTRAL",
+                  "renditionMap": {},
+                  "type": "component"
+                }
+              ],
+              "id": "94e11e4b-e3c9-4700-bfa4-e48651a5b669",
+              "regionLabel": "Column 1",
+              "regionName": "col1",
+              "renditionMap": {},
+              "type": "region"
+            }
+          ],
+          "renderPriority": "NEUTRAL",
+          "renditionMap": {},
+          "scopedBrandingSetId": null,
+          "type": "component"
+        }
+      ],
+      "id": "e1686540-44ba-4d1a-a277-dedc65b14e5d",
+      "regionName": "content",
+      "type": "region"
+    },
+    {
+      "components": [
+        {
+          "componentAttributes": {
+            "customHeadTags": "",
+            "description": "",
+            "pageTitle": "Contact",
+            "recordId": "{!recordId}"
+          },
+          "componentName": "community_builder:seoAssistant",
+          "id": "f7b2c59b-9bc7-4b4e-89aa-84bbaaeeaf98",
+          "renderPriority": "NEUTRAL",
+          "renditionMap": {},
+          "type": "component"
+        }
+      ],
+      "id": "2a2f44cf-582f-4766-848b-5296a174f340",
+      "regionName": "sfdcHiddenRegion",
+      "type": "region"
+    }
+  ],
+  "themeLayoutType": "Inner",
+  "type": "view",
+  "viewType": "custom-contact"
 }
