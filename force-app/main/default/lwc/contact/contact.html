@@ -1,4 +1,57 @@
 <template>
-  <h1>Contact Me</h1>
-  <p>Get in touch!</p>
+  <div class="slds-grid slds-grid_align-center">
+    <div class="slds-col">
+      <h2 class="slds-text-heading_small slds-var-p-bottom_small">
+        Here are a few ways to get in touch:
+      </h2>
+      <ul class="slds-list_dotted">
+        <li class="slds-var-p-around_xx-small">
+          Send me an email at
+          <lightning-formatted-email
+            value="me@brettbarlow.com"
+            hide-icon
+          ></lightning-formatted-email>
+        </li>
+        <li class="slds-var-p-around_xx-small">
+          Message me on the&nbsp;
+          <lightning-formatted-url
+            value="https://gooddaysir.slack.com"
+            label="Good Day, Sir! Slack Community"
+            target="_blank"
+          ></lightning-formatted-url>
+          <ul class="slds-list_dotted">
+            <li>
+              Join&nbsp;
+              <lightning-formatted-url
+                value="https://www.gooddaysirpodcast.com/community"
+                label="here"
+                target="_blank"
+              ></lightning-formatted-url
+              >&nbsp;if you're not a member
+            </li>
+          </ul>
+        </li>
+        <li class="slds-var-p-around_xx-small">
+          Find me on&nbsp;
+          <lightning-formatted-url
+            value="https://www.linkedin.com/in/brettbarlow/"
+            label="LinkedIn"
+            target="_blank"
+          ></lightning-formatted-url
+          >,&nbsp;
+          <lightning-formatted-url
+            value="https://twitter.com/thebrettbarlow"
+            label="Twitter"
+            target="_blank"
+          ></lightning-formatted-url
+          >&nbsp;or the&nbsp;
+          <lightning-formatted-url
+            value="https://trailblazer.me/id/brett"
+            label="Trailblazer Community"
+            target="_blank"
+          ></lightning-formatted-url>
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
