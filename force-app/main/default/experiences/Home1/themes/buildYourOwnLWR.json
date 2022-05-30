@@ -31,7 +31,7 @@
                   "components": [
                     {
                       "componentAttributes": {
-                        "navigationMenu": "Default_Navigation"
+                        "navigationMenu": "Header_Links"
                       },
                       "componentName": "c:header",
                       "id": "42f6ce03-426b-457e-9597-c6a67e195766",
