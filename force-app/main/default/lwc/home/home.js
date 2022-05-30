@@ -1,10 +1,10 @@
 import { LightningElement } from 'lwc';
-import DREAMFORCE_2018_2 from '@salesforce/resourceUrl/dreamforce2018_2';
-import DREAMFORCE_2019_1 from '@salesforce/resourceUrl/dreamforce2019_1';
-import DREAMFORCE_2019_2 from '@salesforce/resourceUrl/dreamforce2019_2';
+import DEV_USER_GROUP from '@salesforce/resourceUrl/devUserGroup';
+import DREAMFORCE_2018 from '@salesforce/resourceUrl/dreamforce2018';
+import DREAMFORCE_2019 from '@salesforce/resourceUrl/dreamforce2019';
 
 export default class Home extends LightningElement {
-  dreamforce2018_2 = DREAMFORCE_2018_2;
-  dreamforce2019_1 = DREAMFORCE_2019_1;
-  dreamforce2019_2 = DREAMFORCE_2019_2;
+  devUserGroup = DEV_USER_GROUP;
+  dreamforce2018 = DREAMFORCE_2018;
+  dreamforce2019 = DREAMFORCE_2019;
 }
