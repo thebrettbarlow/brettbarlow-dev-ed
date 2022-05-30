@@ -83,3 +83,9 @@ jobs:
             --testlevel=RunLocalTests \
             --sourcepath=force-app \
             --targetusername=devhub
+
+      - name: Publish the Experience Cloud Site
+        run: |
+          sfdx force:community:publish \
+            --targetusername=devhub \
+            --name=Home
