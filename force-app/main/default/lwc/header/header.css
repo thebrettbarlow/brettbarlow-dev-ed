@@ -31,3 +31,7 @@ img.hamburger-menu-icon {
     font-size: 1.6rem;
   }
 }
+
+.header-link {
+  text-decoration: none;
+}

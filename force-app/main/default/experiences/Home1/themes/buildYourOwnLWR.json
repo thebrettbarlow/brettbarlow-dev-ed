@@ -12,9 +12,9 @@
   "views": [
     {
       "componentAttributes": {},
-      "componentName": "community_byo:scopedHeaderAndFooter",
+      "componentName": "c:websiteLayout",
       "id": "fd234992-83e6-46fa-af87-1b085972a17a",
-      "label": "Scoped Header and Footer",
+      "label": "Website Layout",
       "regions": [
         {
           "components": [
@@ -92,6 +92,11 @@
           ],
           "id": "45e37c9d-cf6b-4f8d-b1be-a02bc8de311d",
           "regionName": "footer",
+          "type": "region"
+        },
+        {
+          "id": "47b1d4f3-ff44-4cda-87fb-7ee7cfb59b17",
+          "regionName": "default",
           "type": "region"
         }
       ],
