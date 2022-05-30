@@ -54,6 +54,18 @@ sfdx force:community:publish \
   --name=Home
 echo ""
 
+echo "Assigning Permission Set..."
+sfdx force:user:permset:assign \
+  --targetusername="${ORG_ALIAS}" \
+  --permsetname=Projects_User
+echo ""
+
+echo "Importing sample data..."
+sfdx force:data:tree:import \
+  --targetusername="${ORG_ALIAS}" \
+  --plan=data/Project__c-plan.json
+echo ""
+
 echo "Opening org..." && \
 sfdx force:org:open \
   --targetusername="${ORG_ALIAS}"
