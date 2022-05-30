@@ -1,10 +1,8 @@
 [
-    {
-        "sobject": "Project__c",
-        "saveRefs": true,
-        "resolveRefs": false,
-        "files": [
-            "Project__cs.json"
-        ]
-    }
+  {
+    "sobject": "Project__c",
+    "saveRefs": true,
+    "resolveRefs": false,
+    "files": ["Project__cs.json"]
+  }
 ]
