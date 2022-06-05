@@ -21,8 +21,6 @@ export default class ProjectCard extends NavigationMixin(LightningElement) {
     this[NavigationMixin.GenerateUrl](this.pageReference).then((result) => {
       this.url = result;
     });
-
-    // update to use slds-icon_medium
   }
 
   navigateToProjectPage(event) {
