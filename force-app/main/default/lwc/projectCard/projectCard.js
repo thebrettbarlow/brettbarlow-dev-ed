@@ -24,7 +24,6 @@ export default class ProjectCard extends NavigationMixin(LightningElement) {
   }
 
   navigateToProjectPage(event) {
-    console.log('navigateToProjectPage');
     event.preventDefault();
     event.stopPropagation();
 
