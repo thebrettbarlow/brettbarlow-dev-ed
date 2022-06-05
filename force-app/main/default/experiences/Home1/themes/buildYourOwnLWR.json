@@ -140,17 +140,6 @@
               "id": "841603f6-4a48-433a-820b-66ef77e88ac8",
               "regions": [
                 {
-                  "components": [
-                    {
-                      "componentAttributes": {
-                        "navigationMenu": "Default Navigation"
-                      },
-                      "componentName": "c:header",
-                      "id": "eb3a3c48-5ef8-4149-9771-4a4a75cae93b",
-                      "renditionMap": {},
-                      "type": "component"
-                    }
-                  ],
                   "id": "8143b862-a1c3-4761-ae67-389cfb9d4cf2",
                   "regionLabel": "Theme Header",
                   "regionName": "headerSection",
