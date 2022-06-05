@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Projects</masterLabel>
+    <description>Displays project records on the website</description>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+        <property
+        name="projectPage"
+        type="String"
+        label="Project Page"
+        description="The Experience Cloud page to open when a project is selected"
+      />
+      </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,85 @@
+<template>
+  <template if:true={project.error}> {project.error} </template>
+  <template if:true={project.data}>
+    <div class="slds-size_1-of-1">
+      <lightning-card class="slds-var-p-around_large">
+        <div slot="title">
+          <c-project-title icon={icon} icon-size="large" done={done}>
+            <h1 slot="heading" class="slds-text-heading_medium" title={name}>
+              {name}
+            </h1>
+          </c-project-title>
+        </div>
+        <div slot="actions">
+          <div class="slds-show_medium">
+            <c-project-tags tags={tags}></c-project-tags>
+          </div>
+        </div>
+        <div class="slds-grid slds-wrap">
+          <div
+            class="
+              slds-hide_medium
+              slds-col
+              slds-var-p-horizontal_medium
+              slds-size_1-of-1
+            "
+          >
+            <c-project-tags tags={tags}></c-project-tags>
+          </div>
+          <div
+            class="
+              slds-col
+              slds-border_right
+              slds-var-p-vertical_small
+              slds-var-p-horizontal_medium
+              slds-size_1-of-1
+              slds-medium-size_2-of-5
+            "
+          >
+            <ul class="slds-list_vertical-space-medium">
+              <li class="slds-item">
+                <c-project-section
+                  heading="Goal"
+                  content={goal}
+                ></c-project-section>
+              </li>
+              <li class="slds-item slds-border_bottom">
+                <c-project-section
+                  heading="Retrospective"
+                  content={retrospective}
+                ></c-project-section>
+              </li>
+              <li class="slds-item">
+                <c-project-section
+                  heading="Requirements"
+                  content={requirements}
+                ></c-project-section>
+              </li>
+              <li class="slds-item">
+                <c-project-section
+                  heading="Design"
+                  content={design}
+                ></c-project-section>
+              </li>
+              <div class="slds-hide_medium slds-border_bottom"></div>
+            </ul>
+          </div>
+          <div
+            class="
+              slds-col
+              slds-var-p-vertical_small
+              slds-var-p-horizontal_medium
+              slds-size_1-of-1
+              slds-medium-size_3-of-5
+            "
+          >
+            <c-project-section
+              heading="Implementation"
+              content={implementation}
+            ></c-project-section>
+          </div>
+        </div>
+      </lightning-card>
+    </div>
+  </template>
+</template>

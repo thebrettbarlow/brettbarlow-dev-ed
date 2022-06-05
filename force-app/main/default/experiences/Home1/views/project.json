@@ -1,8 +1,8 @@
 {
   "appPageId": "cfd907ec-2754-4dca-845c-05387d321569",
   "componentName": "community_layout:sldsFlexibleLayout",
-  "id": "e4034157-ea39-40d7-8df8-e616f0410539",
-  "label": "About",
+  "id": "6458628d-6f64-484f-98fe-2162ef975aa9",
+  "label": "Project",
   "regions": [
     {
       "components": [
@@ -10,23 +10,23 @@
           "componentAttributes": {
             "backgroundImageConfig": "",
             "backgroundImageOverlay": "rgba(0,0,0,0)",
-            "sectionConfig": "{\"UUID\":\"c99a117f-ee09-462d-894e-72fc1b5a47df\",\"columns\":[{\"UUID\":\"eb2140be-b941-4eb7-8cd1-47ae0239f369\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+            "sectionConfig": "{\"UUID\":\"677e8d42-877e-4663-aaaa-623e69b2aa27\",\"columns\":[{\"UUID\":\"dfdb4df8-e945-445d-8382-529f4cee0592\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
           },
           "componentName": "community_layout:section",
-          "id": "c99a117f-ee09-462d-894e-72fc1b5a47df",
+          "id": "677e8d42-877e-4663-aaaa-623e69b2aa27",
           "regions": [
             {
               "components": [
                 {
                   "componentAttributes": {},
-                  "componentName": "c:about",
-                  "id": "c93ac4d1-e583-482a-ac92-8111bb829af4",
+                  "componentName": "c:project",
+                  "id": "5796830a-8ba2-4c35-97f1-e8188ef7dc92",
                   "renderPriority": "NEUTRAL",
                   "renditionMap": {},
                   "type": "component"
                 }
               ],
-              "id": "eb2140be-b941-4eb7-8cd1-47ae0239f369",
+              "id": "dfdb4df8-e945-445d-8382-529f4cee0592",
               "regionLabel": "Column 1",
               "regionName": "col1",
               "renditionMap": {},
@@ -39,7 +39,7 @@
           "type": "component"
         }
       ],
-      "id": "b30e773a-aebd-49e7-b33b-1c2e76ca2422",
+      "id": "54435029-b35d-4ded-9735-98369de33207",
       "regionName": "content",
       "type": "region"
     },
@@ -49,22 +49,22 @@
           "componentAttributes": {
             "customHeadTags": "",
             "description": "",
-            "pageTitle": "About",
+            "pageTitle": "Project",
             "recordId": "{!recordId}"
           },
           "componentName": "community_builder:seoAssistant",
-          "id": "a86644ef-16ba-4a36-809a-c9d4bf7f806f",
+          "id": "4293ee8b-9f07-4065-af7d-4584b95284b6",
           "renderPriority": "NEUTRAL",
           "renditionMap": {},
           "type": "component"
         }
       ],
-      "id": "d0e563b1-48d3-4b9e-ba8f-38c205569fa3",
+      "id": "f23585d0-2886-4cfc-8e5f-7c2a20a1b222",
       "regionName": "sfdcHiddenRegion",
       "type": "region"
     }
   ],
   "themeLayoutType": "pCO4OTJcHp7OcBG9CpwQ5nFLwmGLUw",
   "type": "view",
-  "viewType": "custom-about"
+  "viewType": "custom-project"
 }

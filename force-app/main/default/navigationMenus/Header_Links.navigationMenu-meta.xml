@@ -4,15 +4,22 @@
     <containerType>Network</containerType>
     <label>Header Links</label>
     <navigationMenuItem>
-        <label>About</label>
+        <label>Projects</label>
         <position>1</position>
+        <publiclyAvailable>true</publiclyAvailable>
+        <target>/projects</target>
+        <type>InternalLink</type>
+    </navigationMenuItem>
+    <navigationMenuItem>
+        <label>About</label>
+        <position>2</position>
         <publiclyAvailable>true</publiclyAvailable>
         <target>/about</target>
         <type>InternalLink</type>
     </navigationMenuItem>
     <navigationMenuItem>
         <label>Contact</label>
-        <position>2</position>
+        <position>3</position>
         <publiclyAvailable>true</publiclyAvailable>
         <target>/contact</target>
         <type>InternalLink</type>

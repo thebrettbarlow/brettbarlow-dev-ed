@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Icon__c</fullName>
+    <description
+  >Name of an icon for this project. This will be displayed in the UI next to the name of the project.
+
+Needs to be one of the icons listed on https://lightningdesignsystem.com/icons</description>
+    <externalId>false</externalId>
+    <inlineHelpText
+  >Include the full name of the icon. For example - action:new_note, standard:account, custom:custom88
+https://www.lightningdesignsystem.com/icons</inlineHelpText>
+    <label>Icon</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
