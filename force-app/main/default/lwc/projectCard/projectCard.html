@@ -1,0 +1,28 @@
+<template>
+  <lightning-card>
+    <div slot="title">
+      <c-project-title
+        icon={project.Icon__c}
+        icon-size="medium"
+        done={project.Done__c}
+      >
+        <a slot="heading" href={url} onclick={navigateToProjectPage}>
+          <h1 class="slds-text-heading_small">{project.Name}</h1>
+        </a>
+      </c-project-title>
+    </div>
+    <div class="slds-var-p-around_medium">
+      <lightning-formatted-rich-text
+        class="slds-line-clamp_x-small"
+        value={project.Goal__c}
+      ></lightning-formatted-rich-text>
+    </div>
+    <div slot="footer">
+      <div class="slds-grid slds-grid_align-center">
+        <div class="slds-col">
+          <c-project-tags tags={project.Tags__c}></c-project-tags>
+        </div>
+      </div>
+    </div>
+  </lightning-card>
+</template>

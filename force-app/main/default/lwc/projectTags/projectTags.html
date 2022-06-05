@@ -1,0 +1,9 @@
+<template>
+  <div class="slds-grid slds-wrap">
+    <template for:each={tags} for:item="tag">
+      <div class="slds-col slds-grow-none" key={tag.id}>
+        <lightning-badge label={tag.label}></lightning-badge>
+      </div>
+    </template>
+  </div>
+</template>

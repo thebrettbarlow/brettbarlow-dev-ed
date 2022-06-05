@@ -1,0 +1,19 @@
+<template>
+  <div class="slds-grid project-title-text">
+    <div class="slds-col slds-var-p-right_small">
+      <lightning-icon icon-name={icon} size={iconSize}></lightning-icon>
+    </div>
+    <div class="slds-col">
+      <slot name="heading"> </slot>
+      <p class="slds-var-p-top_xx-small slds-text-body_small">
+        <lightning-formatted-date-time
+          value={done}
+          day="numeric"
+          month="long"
+          year="numeric"
+          time-zone="UTC"
+        ></lightning-formatted-date-time>
+      </p>
+    </div>
+  </div>
+</template>
