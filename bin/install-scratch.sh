@@ -39,7 +39,7 @@ echo ""
 echo "Deploying base metadata..."
 sfdx force:source:deploy \
   --targetusername="${ORG_ALIAS}" \
-  --metadata=AuraDefinitionBundle,ApexClass,Flexipage,Layout,LightningComponentBundle,CustomObject,PermissionSet,StaticResource,CustomTab,SharingRules
+  --metadata=AuraDefinitionBundle,ApexClass,ApexTrigger,Flexipage,Layout,LightningComponentBundle,CustomObject,PermissionSet,StaticResource,CustomTab,SharingRules
 echo ""
 
 echo "Deploying Experience site metadata..."
