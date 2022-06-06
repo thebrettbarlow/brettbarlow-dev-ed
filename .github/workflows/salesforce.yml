@@ -56,7 +56,7 @@ jobs:
         run: |
           sfdx force:source:deploy \
             --targetusername=scratch-org \
-            --metadata=AuraDefinitionBundle,ApexClass,Flexipage,Layout,LightningComponentBundle,CustomObject,PermissionSet,StaticResource,CustomTab
+            --metadata=AuraDefinitionBundle,ApexClass,ApexTrigger,Flexipage,Layout,LightningComponentBundle,CustomObject,PermissionSet,StaticResource,CustomTab,SharingRules
 
       - name: Deploy Experience Cloud Metadata
         run: |

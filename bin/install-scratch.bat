@@ -39,7 +39,7 @@ timeout 30 > NUL
 echo Deploying base metadata...
 cmd.exe /c sfdx force:source:deploy ^
   --targetusername=%ORG_ALIAS% ^
-  --metadata=AuraDefinitionBundle,ApexClass,Flexipage,Layout,LightningComponentBundle,CustomObject,PermissionSet,StaticResource,CustomTab
+  --metadata=AuraDefinitionBundle,ApexClass,ApexTrigger,Flexipage,Layout,LightningComponentBundle,CustomObject,PermissionSet,StaticResource,CustomTab,SharingRules
 call :checkForError
 @echo:
 
