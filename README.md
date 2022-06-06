@@ -1,18 +1,17 @@
-# Salesforce DX Project: Next Steps
+# Brett Barlow's Salesforce Developer Org
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+![Deploy to Salesforce](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce.yml/badge.svg)
 
-## How Do You Plan to Deploy Your Changes?
+https://brettbarlow-dev-ed.my.site.com
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+This repo includes metadata for projects I work on in my Salesforce Developer Org. Feel free to [raise an issue](https://github.com/thebrettbarlow/brettbarlow-dev-ed/issues) or [contact me](https://brettbarlow-dev-ed.my.site.com/contact) if you have questions.
 
-## Configure Your Salesforce DX Project
+## Push to a Scratch Org
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+Following a pattern I saw in a few of the [trailheadapps](https://github.com/trailheadapps) repos, I added scripts to the repo's [bin](https://github.com/thebrettbarlow/brettbarlow-dev-ed/tree/main/bin) folder that can be used to make Scratch Orgs.
 
-## Read All About It
+Clone this repo, `cd` into it and run this to make a Scratch Org:
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+```shell
+./bin/install-scratch.sh
+```
