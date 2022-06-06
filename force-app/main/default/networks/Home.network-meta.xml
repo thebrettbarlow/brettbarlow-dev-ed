@@ -33,7 +33,7 @@
     <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
     <networkMemberGroups>
         <profile>admin</profile>
-    </networkMemberGroups> 
+    </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting
     >Standard</changePasswordPageOverrideSetting>
