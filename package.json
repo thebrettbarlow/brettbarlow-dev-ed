@@ -22,17 +22,21 @@
     "npm": ">= 6.5.0"
   },
   "scripts": {
-    "format:apex": "prettier --write 'force-app/**/*.{cls,trigger}'",
-    "format:apex:scripts": "prettier --write 'scripts/*.apex' --parser apex-anonymous",
-    "lint:apex": "sfdx scanner:run --target='force-app/**/*.cls' --engine=pmd",
-    "lint:js": "sfdx scanner:run --target='force-app/**/*.js' --eslintconfig=.eslintrc",
-    "open": "sfdx force:org:open",
+    "check:apex": "prettier --check '**/*.{cls,trigger}'",
+    "check:apex:scripts": "prettier --check 'scripts/*.apex' --parser apex-anonymous",
+    "check:lwc": "prettier --check '**/lwc/**/*.{css,html,js}'",
+    "check:other": "prettier --check '**/*.{json,md,yml}'",
+    "coverage": "npm-run-all --parallel coverage:*",
+    "coverage:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10 --codecoverage --resultformat=human --detailedcoverage",
+    "coverage:lwc": "sfdx-lwc-jest --coverage",
+    "lint:apex": "sfdx scanner:run --target='**/*.cls,**/*.trigger' --engine=pmd",
+    "lint:lwc": "sfdx scanner:run --target='**/lwc/**/*.js' --eslintconfig=.eslintrc",
     "prepare": "husky install",
+    "sf:open": "sfdx force:org:open",
+    "sf:validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --wait=10",
+    "test": "npm-run-all --parallel test:*",
     "test:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10",
-    "test:apex:coverage": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10 --codecoverage --resultformat=human --detailedcoverage",
-    "test:lwc": "sfdx-lwc-jest",
-    "test:lwc:coverage": "sfdx-lwc-jest --coverage",
-    "validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --wait=10"
+    "test:lwc": "sfdx-lwc-jest -- --passWithNoTests"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
@@ -51,7 +55,15 @@
     "prettier-plugin-apex": "1.10.0"
   },
   "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "**/*.{cls,trigger}": [
+      "prettier --write",
+      "npm run lint:apex"
+    ],
+    "**/scripts/*.apex": "prettier --write --parser apex-anonymous",
+    "**/lwc/**/*.{css,html,js}": [
+      "prettier --write",
+      "npm run lint:lwc"
+    ],
+    "**/*.{json,md,yml}": "prettier --write"
   }
 }
