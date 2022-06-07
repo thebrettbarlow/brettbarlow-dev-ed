@@ -2,12 +2,6 @@
   "name": "brettbarlow-dev-ed",
   "version": "1.0.0",
   "description": "Brett Barlow's Salesforce Developer Org",
-  "scripts": {
-    "prettier": "prettier --write \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-    "prettier:verify": "prettier --list-different \"**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}\"",
-    "postinstall": "node bin/check-version.js && husky install",
-    "precommit": "npm run prettier"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thebrettbarlow/brettbarlow-dev-ed.git"
@@ -27,23 +21,37 @@
     "node": ">= 14.15.0",
     "npm": ">= 6.5.0"
   },
+  "scripts": {
+    "format:apex": "prettier --write 'force-app/**/*.{cls,trigger}'",
+    "format:apex:scripts": "prettier --write 'scripts/*.apex' --parser apex-anonymous",
+    "lint:apex": "sfdx scanner:run --target='force-app/**/*.cls' --engine=pmd",
+    "lint:js": "sfdx scanner:run --target='force-app/**/*.js' --eslintconfig=.eslintrc",
+    "open": "sfdx force:org:open",
+    "prepare": "husky install",
+    "test:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10",
+    "test:apex:coverage": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10 --codecoverage --resultformat=human --detailedcoverage",
+    "test:lwc": "sfdx-lwc-jest",
+    "test:lwc:coverage": "sfdx-lwc-jest --coverage",
+    "validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --wait=10"
+  },
   "devDependencies": {
-    "@lwc/eslint-plugin-lwc": "^1.1.0",
-    "@prettier/plugin-xml": "^1.1.0",
-    "@sa11y/jest": "^3.0.0",
-    "@salesforce/eslint-config-lwc": "^2.2.0",
-    "@salesforce/eslint-plugin-aura": "^2.0.0",
-    "@salesforce/eslint-plugin-lightning": "^0.1.1",
+    "@babel/core": "^7.18.2",
+    "@babel/eslint-parser": "^7.18.2",
+    "@lwc/eslint-plugin-lwc": "^1.2.1",
+    "@salesforce/eslint-config-lwc": "^3.3.1",
+    "@salesforce/eslint-plugin-lightning": "^1.0.0",
     "@salesforce/sfdx-lwc-jest": "^1.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jest": "^24.5.0",
-    "husky": "^7.0.2",
-    "jest-canvas-mock": "^2.3.1",
-    "lint-staged": "^11.1.2",
-    "prettier": "^2.4.1",
-    "prettier-plugin-apex": "^1.10.0",
-    "semver": "^7.3.5"
+    "@salesforce/sfdx-scanner": "^3.1.2",
+    "eslint": "^8.17.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.0",
+    "prettier": "2.6.2",
+    "prettier-plugin-apex": "1.10.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }

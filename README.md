@@ -1,6 +1,6 @@
 # Brett Barlow's Salesforce Developer Org
 
-![Deploy to Salesforce](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce.yml/badge.svg)
+![Salesforce CI](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce.yml/badge.svg)
 
 https://brettbarlow-dev-ed.my.site.com
 
@@ -14,4 +14,13 @@ Clone this repo, `cd` into it and run this to make a Scratch Org:
 
 ```shell
 ./bin/install-scratch.sh
+```
+
+## Dev Dependencies
+
+The following tools need to be installed in order to work with this project:
+
+```
+# Salesforce Code Analyzer: https://forcedotcom.github.io/sfdx-scanner
+sfdx plugins:install @salesforce/sfdx-scanner@latest-pilot
 ```
