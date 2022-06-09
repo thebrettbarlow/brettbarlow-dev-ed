@@ -21,6 +21,10 @@ Clone this repo, `cd` into it and run this to make a Scratch Org:
 The following tools need to be installed in order to work with this project:
 
 ```
+# Salesforce CLI: https://developer.salesforce.com/tools/sfdxcli
+npm install sfdx-cli --global
+npm install @salesforce/cli --global
+
 # Salesforce Code Analyzer: https://forcedotcom.github.io/sfdx-scanner
 sfdx plugins:install @salesforce/sfdx-scanner@latest-pilot
 ```
