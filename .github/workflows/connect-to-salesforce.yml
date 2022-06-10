@@ -17,4 +17,4 @@ jobs:
             --setalias=brettbarlow-dev-ed-ci \
             --setdefaultusername \
             --setdefaultdevhubusername \
-            --sfdxurlfile=sfdxurlfile.txt
+            --sfdxurlfile=sfdxurlfile.txt -h
