@@ -6,7 +6,7 @@ EXPERIENCE_CLOUD_SITE="Home"
 TARGET_USERNAME="brettbarlow-scratch"
 
 echo ""
-echo "Installing Scratch Org ($TARGET_USERNAME)"
+echo "Building Scratch Org ($TARGET_USERNAME)"
 echo ""
 
 echo "Cleaning previous Scratch Org..."

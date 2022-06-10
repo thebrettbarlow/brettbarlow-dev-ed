@@ -1,40 +1,63 @@
 # Brett Barlow's Salesforce Developer Org
 
 ![Salesforce CI](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-ci.yml/badge.svg)
-![Salesforce Scratch Org](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-scratch.yml/badge.svg)
 
 https://brettbarlow-dev-ed.my.site.com
 
 This repo includes metadata for projects I work on in my Salesforce Developer Org. Feel free to [raise an issue](https://github.com/thebrettbarlow/brettbarlow-dev-ed/issues) or [contact me](https://brettbarlow-dev-ed.my.site.com/contact) if you have questions.
 
-## Push to a Scratch Org
+## Build a Scratch Org
 
-Following a pattern I saw in a few of the [trailheadapps](https://github.com/trailheadapps) repos, I added scripts to the repo's [bin](https://github.com/thebrettbarlow/brettbarlow-dev-ed/tree/main/bin) folder that can be used to make Scratch Orgs.
+![Salesforce Scratch Org](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-scratch.yml/badge.svg)
 
-Clone this repo, `cd` into it and run this to make a Scratch Org:
+To build a Scratch Org from this project:
+
+#### 1. Clone the repo and `cd` into it:
 
 ```shell
-./bin/install-scratch.sh
+git clone https://github.com/thebrettbarlow/brettbarlow-dev-ed.git
+cd brettbarlow-dev-ed
+```
+
+#### 2. Set a Default DevHub
+
+```shell
+sfdx force:config:set defaultdevhubusername=your_devhub
+```
+
+#### 3. Build the Scratch Org
+
+```shell
+./scripts/build_scratch_org.sh
 ```
 
 ## Dev Dependencies
 
-The following tools need to be installed in order to work with this project:
+These are required to work with this project:
 
-```
+```shell
 # Salesforce CLI: https://developer.salesforce.com/tools/sfdxcli
 npm install sfdx-cli --global
 npm install @salesforce/cli --global
+```
 
+This is required to run `npm run lint:*` commands:
+
+```shell
 # Salesforce Code Analyzer: https://forcedotcom.github.io/sfdx-scanner
 sfdx plugins:install @salesforce/sfdx-scanner@latest-pilot
 ```
 
-## Notes
+## General Notes
 
-check:apex:scripts is needed because we need to pass `--parser apex-anonymous`
-when running prettier on anonymous apex.
+#### Prettier
 
-Not running test:apex in the Test job because updated apex class files will not
-be used in this test run. It will run tests in the org as they are. The validate-in-salesforce
-step will run apex tests with any changes so we wait until then to run them.
+Anonymous Apex files end in `.apex` and `prettier-plugin-apex` needs the
+`--parser apex-anonymous` when parsing these. This is why there are `*:apex:scripts`
+commands and a specific `lint-staged` rule.
+
+#### Running Tests for Pull Requests
+
+The `Test` job of [pr.yml](./.github/workflows/pr.yml) runs LWC tests, but does not
+run Apex tests because they have not been deployed to the org yet. We run Apex tests
+during the `validate-in-salesforce` job.

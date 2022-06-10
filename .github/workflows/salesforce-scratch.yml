@@ -9,7 +9,7 @@ env:
   SCRATCH_ORG_ALIAS: brettbarlow-scratch
 
 jobs:
-  make-scratch-org:
+  build-scratch-org:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -23,8 +23,8 @@ jobs:
         with:
           sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
 
-      - name: Make Scratch Org
-        run: ./scripts/make_scratch_org.sh
+      - name: Build Scratch Org
+        run: ./scripts/build_scratch_org.sh
 
       - name: Delete Scratch Org
         if: always()
