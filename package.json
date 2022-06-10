@@ -53,15 +53,9 @@
     "prettier-plugin-apex": "1.10.0"
   },
   "lint-staged": {
-    "**/*.{cls,trigger}": [
-      "prettier --write",
-      "npm run lint:apex"
-    ],
+    "**/*.{cls,trigger}": "prettier --write",
     "**/*.apex": "prettier --write --parser apex-anonymous",
-    "**/lwc/**/*.{css,html,js}": [
-      "prettier --write",
-      "npm run lint:lwc"
-    ],
+    "**/lwc/**/*.{css,html,js}": "prettier --write",
     "**/*.{json,md,yml}": "prettier --write"
   }
 }
