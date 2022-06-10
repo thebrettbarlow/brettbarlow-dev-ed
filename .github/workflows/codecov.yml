@@ -26,3 +26,9 @@ jobs:
 
       - name: Run LWC Tests
         run: npm run test:lwc
+
+      - name: Collect Code Coverage
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage1.xml,./coverage2.xml
