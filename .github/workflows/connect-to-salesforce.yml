@@ -1,0 +1,20 @@
+name: Connect to Salesforce
+
+on:
+  workflow_call:
+    secrets:
+      sfdx_auth_url:
+        required: true
+
+jobs:
+  connect-to-salesforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to Salesforce
+        run: |
+          echo ${{ secrets.sfdx_auth_url }} > sfdxurlfile.txt
+          sfdx auth:sfdxurl:store \
+            --setalias=brettbarlow-dev-ed-ci \
+            --setdefaultusername \
+            --setdefaultdevhubusername \
+            --sfdxurlfile=sfdxurlfile.txt

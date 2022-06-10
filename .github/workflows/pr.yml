@@ -1,0 +1,56 @@
+name: Pull Request
+
+on:
+  pull_request:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install NPM
+        uses: ./.github/workflows/install-npm.yml
+
+      - name: Install SFDX
+        uses: ./.github/workflows/install-sfdx.yml
+
+  check-formatting:
+    runs-on: ubuntu-latest
+    needs: prepare
+    steps:
+      - name: Check Formatting
+        run: |
+          npm run check:apex
+          npm run check:apex:scripts
+          npm run check:lwc
+          npm run check:other
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: prepare
+    steps:
+      - name: Lint
+        run: |
+          npm run lint:apex
+          npm run lint:lwc
+
+  test:
+    runs-on: ubuntu-latest
+    needs: prepare
+    steps:
+      - name: Test
+        run: npm run test:lwc
+
+  validate-in-salesforce:
+    runs-on: ubuntu-latest
+    needs: [prepare, check-formatting, lint, test]
+    steps:
+      - name: Connect to Salesforce
+        uses: ./.github/workflows/connect-to-salesforce.yml
+        secrets:
+          sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
+
+      - name: Validate in Salesforce
+        run: npm run sf:validate

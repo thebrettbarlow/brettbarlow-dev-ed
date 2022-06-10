@@ -23,18 +23,17 @@
   },
   "scripts": {
     "check:apex": "prettier --check '**/*.{cls,trigger}'",
-    "check:apex:scripts": "prettier --check 'scripts/*.apex' --parser apex-anonymous",
+    "check:apex:scripts": "prettier --check '**/*.apex' --parser apex-anonymous",
     "check:lwc": "prettier --check '**/lwc/**/*.{css,html,js}'",
     "check:other": "prettier --check '**/*.{json,md,yml}'",
     "coverage": "npm-run-all --parallel coverage:*",
     "coverage:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10 --codecoverage --resultformat=human --detailedcoverage",
     "coverage:lwc": "sfdx-lwc-jest --coverage",
-    "lint:apex": "sfdx scanner:run --target='**/*.cls,**/*.trigger' --engine=pmd",
+    "lint:apex": "sfdx scanner:run --target='**/*.apex,**/*.cls,**/*.trigger' --engine=pmd",
     "lint:lwc": "sfdx scanner:run --target='**/lwc/**/*.js' --eslintconfig=.eslintrc",
     "prepare": "husky install",
     "sf:open": "sfdx force:org:open",
     "sf:validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --wait=10",
-    "test": "npm-run-all --parallel test:*",
     "test:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10",
     "test:lwc": "sfdx-lwc-jest -- --passWithNoTests"
   },
@@ -59,7 +58,7 @@
       "prettier --write",
       "npm run lint:apex"
     ],
-    "**/scripts/*.apex": "prettier --write --parser apex-anonymous",
+    "**/*.apex": "prettier --write --parser apex-anonymous",
     "**/lwc/**/*.{css,html,js}": [
       "prettier --write",
       "npm run lint:lwc"

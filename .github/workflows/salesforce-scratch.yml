@@ -1,0 +1,38 @@
+name: Salesforce Scratch Org
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 11 * * *' # 11:30 UTC == 04:30 PT
+
+env:
+  SCRATCH_ORG_ALIAS: brettbarlow-scratch
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install SFDX
+        uses: ./.github/workflows/install-sfdx.yml
+
+      - name: Connect to Salesforce
+        uses: ./.github/workflows/connect-to-salesforce.yml
+        secrets:
+          sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
+
+  make-scratch-org:
+    runs-on: ubuntu-latest
+    needs: prepare
+    steps:
+      - name: Make Scratch Org
+        run: ./scripts/make_scratch_org.sh
+
+      - name: Delete Scratch Org
+        if: always()
+        run: |
+          sfdx force:org:delete \
+            --noprompt \
+            --targetusername="$SCRATCH_ORG_ALIAS"

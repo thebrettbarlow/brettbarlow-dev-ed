@@ -2,73 +2,60 @@
 SCRIPT_PATH=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd $SCRIPT_PATH/..
 
-# Set parameters
-ORG_ALIAS="brettbarlow-scratch"
+EXPERIENCE_CLOUD_SITE="Home"
+TARGET_USERNAME="brettbarlow-scratch"
 
 echo ""
-echo "Installing scratch org ($ORG_ALIAS)"
+echo "Installing Scratch Org ($TARGET_USERNAME)"
 echo ""
 
-# Install script
-echo "Cleaning previous scratch org..."
+echo "Cleaning previous Scratch Org..."
 sfdx force:org:delete \
   --noprompt \
-  --targetusername="${ORG_ALIAS}" &> /dev/null
+  --targetusername="${TARGET_USERNAME}" &> /dev/null
 echo ""
 
-echo "Creating scratch org..."
+echo "Creating Scratch Org..."
 sfdx force:org:create \
   --definitionfile=config/project-scratch-def.json \
-  --setalias="${ORG_ALIAS}" \
+  --setalias="${TARGET_USERNAME}" \
   --setdefaultusername
 echo ""
 
-echo "Creating Experience site..."
+echo "Creating Experience Cloud Site..."
 sfdx force:community:create \
-  --targetusername="${ORG_ALIAS}" \
-  --name=Home \
+  --name="${EXPERIENCE_CLOUD_SITE}" \
   --urlpathprefix="" \
   --templatename="Build Your Own (LWR)" \
   templateParams.AuthenticationType=UNAUTHENTICATED
 echo ""
 
-echo "Sleeping 30s for Experience site deployment"
+echo "Sleeping 30s for Experience Cloud Site deployment"
 sleep 30
 echo ""
 
-echo "Deploying base metadata..."
+echo "Deploying Base Metadata..."
 sfdx force:source:deploy \
-  --targetusername="${ORG_ALIAS}" \
   --metadata=AuraDefinitionBundle,ApexClass,ApexTrigger,Flexipage,Layout,LightningComponentBundle,CustomObject,PermissionSet,StaticResource,CustomTab,SharingRules
 echo ""
 
-echo "Deploying Experience site metadata..."
+echo "Deploying Experience Cloud Site Metadata..."
 sfdx force:source:deploy \
-  --targetusername="${ORG_ALIAS}" \
   --metadata=ExperienceBundle,NavigationMenu,Network,ApexPage,Profile,CustomSite
-echo ""
-
-echo "Publishing Experience site..."
-sfdx force:community:publish \
-  --targetusername="${ORG_ALIAS}" \
-  --name=Home
 echo ""
 
 echo "Assigning Permission Set..."
 sfdx force:user:permset:assign \
-  --targetusername="${ORG_ALIAS}" \
   --permsetname=Projects_User
 echo ""
 
 echo "Importing sample data..."
 sfdx force:data:tree:import \
-  --targetusername="${ORG_ALIAS}" \
   --plan=data/Project__c-plan.json
 echo ""
 
 echo "Opening org..." && \
-sfdx force:org:open \
-  --targetusername="${ORG_ALIAS}"
+sfdx force:org:open
 echo ""
 
 EXIT_CODE="$?"

@@ -1,0 +1,55 @@
+name: Salesforce CI
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 10 * * *' # 10:30 UTC == 03:30 PT
+  push:
+    branches:
+      - main
+    paths:
+      - 'force-app/**'
+
+env:
+  EXPERIENCE_CLOUD_SITE: Home
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install SFDX
+        uses: ./.github/workflows/install-sfdx.yml
+
+      - name: Connect to Salesforce
+        uses: ./.github/workflows/connect-to-salesforce.yml
+        secrets:
+          sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: prepare
+    steps:
+      - name: Deploy to Salesforce
+        run: |
+          sfdx force:source:deploy \
+            --sourcepath=force-app \
+            --testlevel=RunLocalTests
+
+      - name: Get Changed Experience Cloud Metadata
+        id: changed-experience-cloud-metadata
+        uses: tj-actions/changed-files@v22.2
+        with:
+          files: |
+            force-app/main/default/experiences/**
+            force-app/main/default/navigationMenus/**
+            force-app/main/default/networks/**
+            force-app/main/default/sites/**
+
+      - name: Publish the Experience Cloud Site
+        if: steps.changed-experience-cloud-metadata.outputs.any_changed == 'true'
+        run: |
+          sfdx force:community:publish \
+            --name="$EXPERIENCE_CLOUD_SITE"

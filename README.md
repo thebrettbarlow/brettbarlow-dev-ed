@@ -1,6 +1,7 @@
 # Brett Barlow's Salesforce Developer Org
 
-![Salesforce CI](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce.yml/badge.svg)
+![Salesforce CI](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-ci.yml/badge.svg)
+![Salesforce Scratch Org](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-scratch.yml/badge.svg)
 
 https://brettbarlow-dev-ed.my.site.com
 
@@ -28,3 +29,12 @@ npm install @salesforce/cli --global
 # Salesforce Code Analyzer: https://forcedotcom.github.io/sfdx-scanner
 sfdx plugins:install @salesforce/sfdx-scanner@latest-pilot
 ```
+
+## Notes
+
+check:apex:scripts is needed because we need to pass `--parser apex-anonymous`
+when running prettier on anonymous apex.
+
+Not running test:apex in the Test job because updated apex class files will not
+be used in this test run. It will run tests in the org as they are. The validate-in-salesforce
+step will run apex tests with any changes so we wait until then to run them.
