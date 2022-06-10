@@ -27,10 +27,8 @@ jobs:
         uses: ./.github/actions/install-sfdx
       - name: Install SF Scanner
         run: |
-          echo "$PATH"
-          echo "$GITHUB_PATH"
           sfdx/bin/sfdx version
-          sfdx plugins:install @salesforce/sfdx-scanner@latest-pilot
+          sfdx/bin/sfdx plugins:install @salesforce/sfdx-scanner@latest-pilot
       - name: Lint
         run: |
           npm run lint:apex
