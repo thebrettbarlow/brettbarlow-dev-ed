@@ -8,7 +8,7 @@ on:
       - completed
 
 jobs:
-  collect-code-coverage:
+  apex-codecov:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,15 +20,32 @@ jobs:
       - name: Connect to Salesforce
         uses: ./.github/actions/connect-to-salesforce
 
-      - name: Run Apex Tests
-        run: |
-          sfdx force:apex -h
+      - name: Run Tests
+        run: npm run test:apex -- \
+          --codecoverage \
+          --outputdir=coverage/apex \
+          --resultformat=human
 
-      - name: Run LWC Tests
-        run: npm run test:lwc
-
-      - name: Collect Code Coverage
+      - name: Upload to Codecov
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage1.xml,./coverage2.xml
+          flags: Apex
+
+  lwc-codecov:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+
+      - name: Run Tests
+        run: npm run test:lwc -- --coverage
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: LWC
