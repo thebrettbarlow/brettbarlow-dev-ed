@@ -35,8 +35,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install NPM
-        uses: ./.github/actions/install-npm
+      - name: Install SFDX
+        uses: ./.github/actions/install-sfdx
+      - name: Install SF Scanner
+        run: sfdx plugins:install @salesforce/sfdx-scanner@latest-pilot
       - name: Lint
         run: |
           npm run lint:apex
