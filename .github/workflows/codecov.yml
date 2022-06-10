@@ -28,4 +28,4 @@ jobs:
     steps:
       - name: Run Apex Tests
         run: |
-          sfdx force:apex:test:run --help
+          sfdx force:apex:test:run -h
