@@ -61,6 +61,8 @@ jobs:
 
       - name: Connect to Salesforce
         uses: ./.github/actions/connect-to-salesforce
+        with:
+          sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
 
       - name: Validate in Salesforce
         run: npm run sf:validate

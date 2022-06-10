@@ -20,6 +20,8 @@ jobs:
 
       - name: Connect to Salesforce
         uses: ./.github/actions/connect-to-salesforce
+        with:
+          sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
 
       - name: Make Scratch Org
         run: ./scripts/make_scratch_org.sh

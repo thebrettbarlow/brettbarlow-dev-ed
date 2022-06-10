@@ -19,10 +19,13 @@ jobs:
 
       - name: Connect to Salesforce
         uses: ./.github/actions/connect-to-salesforce
+        with:
+          sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
 
       - name: Run Tests
         run: npm run test:apex -- \
           --codecoverage \
+          --detailedcoverage \
           --outputdir=coverage/apex \
           --resultformat=human
 
