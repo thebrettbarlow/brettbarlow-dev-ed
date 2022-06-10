@@ -35,7 +35,7 @@
     "sf:open": "sfdx force:org:open",
     "sf:validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --wait=10",
     "test:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10",
-    "test:lwc": "sfdx-lwc-jest -- --passWithNoTests"
+    "test:lwc": "sfdx-lwc-jest"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
