@@ -11,3 +11,8 @@ runs:
         echo "$HOME/sfdx/bin" >> $GITHUB_PATH
         ~/sfdx/bin/sfdx version
       shell: bash
+    - name: Cache
+      uses: actions/cache@v3
+      with:
+        path: ~/sfdx
+        key: sfdx
