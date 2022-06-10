@@ -1,0 +1,15 @@
+name: 'Connect to Salesforce'
+description: 'Authenticates to the Salesforce DevHub'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Connect to Salesforce
+      run: |
+        echo ${{ secrets.SFDX_AUTH_URL }} > sfdxurlfile.txt
+        sfdx auth:sfdxurl:store \
+          --setalias=brettbarlow-dev-ed-ci \
+          --setdefaultusername \
+          --setdefaultdevhubusername \
+          --sfdxurlfile=sfdxurlfile.txt
+      shell: bash

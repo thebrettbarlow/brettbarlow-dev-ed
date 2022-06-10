@@ -1,5 +1,6 @@
 name: 'Install NPM'
 description: 'Installs NPM'
+
 runs:
   using: 'composite'
   steps:
