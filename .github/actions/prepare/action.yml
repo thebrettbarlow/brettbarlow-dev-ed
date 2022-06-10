@@ -9,11 +9,13 @@ runs:
       with:
         node-version: 16
         cache: 'npm'
+
     - name: Install SFDX
       run: |
         npm install sfdx-cli --global
         npm install @salesforce/cli --global
       shell: bash
+
     - name: Build Dependencies
       run: npm ci
       shell: bash

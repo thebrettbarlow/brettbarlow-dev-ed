@@ -32,7 +32,9 @@
     "sf:open": "sfdx force:org:open",
     "sf:validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --wait=10",
     "test:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10",
-    "test:lwc": "sfdx-lwc-jest"
+    "test:apex:coverage": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10 --codecoverage --detailedcoverage --outputdir=coverage/apex --resultformat=human",
+    "test:lwc": "sfdx-lwc-jest",
+    "test:lwc:coverage": "sfdx-lwc-jest --coverage"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",

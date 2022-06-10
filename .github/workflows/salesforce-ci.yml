@@ -23,8 +23,8 @@ jobs:
       - name: Prepare
         uses: ./.github/actions/prepare
 
-      - name: Connect to Salesforce
-        uses: ./.github/actions/connect-to-salesforce
+      - name: Authenticate to Salesforce
+        uses: ./.github/actions/auth-to-salesforce
         with:
           sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
 

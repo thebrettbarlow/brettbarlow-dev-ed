@@ -17,17 +17,13 @@ jobs:
       - name: Prepare
         uses: ./.github/actions/prepare
 
-      - name: Connect to Salesforce
-        uses: ./.github/actions/connect-to-salesforce
+      - name: Authenticate to Salesforce
+        uses: ./.github/actions/auth-to-salesforce
         with:
           sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
 
       - name: Run Tests
-        run: npm run test:apex -- \
-          --codecoverage \
-          --detailedcoverage \
-          --outputdir=coverage/apex \
-          --resultformat=human
+        run: npm run test:apex:coverage
 
       - name: Upload to Codecov
         uses: codecov/codecov-action@v2
@@ -45,7 +41,7 @@ jobs:
         uses: ./.github/actions/prepare
 
       - name: Run Tests
-        run: npm run test:lwc -- --coverage
+        run: npm run test:lwc:coverage
 
       - name: Upload to Codecov
         uses: codecov/codecov-action@v2
