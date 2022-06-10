@@ -8,24 +8,21 @@ on:
       - completed
 
 jobs:
-  prepare:
+  collect-code-coverage:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install SFDX
-        uses: ./.github/workflows/install-sfdx.yml
+      - name: Prepare
+        uses: ./.github/actions/prepare
 
       - name: Connect to Salesforce
-        uses: ./.github/workflows/connect-to-salesforce.yml
-        secrets:
-          sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
+        uses: ./.github/actions/connect-to-salesforce
 
-  run-tests:
-    runs-on: ubuntu-latest
-    needs: prepare
-    steps:
       - name: Run Apex Tests
         run: |
-          sfdx force:apex:test:run -h
+          sfdx force:apex -h
+
+      - name: Run LWC Tests
+        run: npm run test:lwc

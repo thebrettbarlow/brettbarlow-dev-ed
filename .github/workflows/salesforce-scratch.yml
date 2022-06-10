@@ -9,26 +9,21 @@ env:
   SCRATCH_ORG_ALIAS: brettbarlow-scratch
 
 jobs:
-  prepare:
+  make-scratch-org:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Install SFDX
-        uses: ./.github/workflows/install-sfdx.yml
 
-  connect-to-salesforce:
-    needs: prepare
-    uses: ./.github/workflows/connect-to-salesforce.yml
-    secrets:
-      sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
+      - name: Prepare
+        uses: ./.github/actions/prepare
 
-  make-scratch-org:
-    runs-on: ubuntu-latest
-    needs: connect-to-salesforce
-    steps:
+      - name: Connect to Salesforce
+        uses: ./.github/actions/connect-to-salesforce
+
       - name: Make Scratch Org
         run: ./scripts/make_scratch_org.sh
+
       - name: Delete Scratch Org
         if: always()
         run: |

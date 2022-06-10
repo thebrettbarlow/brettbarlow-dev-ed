@@ -4,17 +4,15 @@ on:
   pull_request:
 
 jobs:
-  prepare:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/prepare
-
   check-formatting:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/prepare
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+
       - name: Check Formatting
         run: |
           npm run check:apex
@@ -25,10 +23,15 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/prepare
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+
       - name: Install SF Scanner
         run: sfdx plugins:install @salesforce/sfdx-scanner@latest-pilot
+
       - name: Lint
         run: |
           npm run lint:apex
@@ -37,8 +40,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/prepare
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+
       - name: Test
         run: npm run test:lwc
 
@@ -46,9 +53,14 @@ jobs:
     needs: [check-formatting, lint, test]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/prepare
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+
       - name: Connect to Salesforce
         uses: ./.github/actions/connect-to-salesforce
+
       - name: Validate in Salesforce
         run: npm run sf:validate
