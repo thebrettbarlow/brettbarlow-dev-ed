@@ -10,9 +10,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install NPM
-        uses: ./.github/workflows/install-npm.yml
+        uses: ./.github/actions/install-npm
       - name: Install SFDX
-        uses: ./.github/workflows/install-sfdx.yml
+        uses: ./.github/actions/install-sfdx
 
   check-formatting:
     runs-on: ubuntu-latest
