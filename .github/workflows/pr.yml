@@ -13,12 +13,12 @@ jobs:
       - name: Prepare
         uses: ./.github/actions/prepare
 
-      # - name: Check Formatting
-      #   run: |
-      #     npm run check:apex
-      #     npm run check:apex:scripts
-      #     npm run check:lwc
-      #     npm run check:other
+      - name: Check Formatting
+        run: |
+          npm run check:apex
+          npm run check:apex:scripts
+          npm run check:lwc
+          npm run check:other
 
   lint:
     runs-on: ubuntu-latest
@@ -46,8 +46,8 @@ jobs:
       - name: Prepare
         uses: ./.github/actions/prepare
 
-      # - name: Test
-      #   run: npm run test:lwc
+      - name: Test
+        run: npm run test:lwc
 
   validate-in-salesforce:
     needs: [check-formatting, lint, test]
