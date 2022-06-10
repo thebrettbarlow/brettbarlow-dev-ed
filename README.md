@@ -10,8 +10,6 @@ This repo includes metadata for projects I work on in my Salesforce Developer Or
 
 ![Salesforce Scratch Org](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-scratch.yml/badge.svg)
 
-To build a Scratch Org from this project:
-
 #### 1. Clone the repo and `cd` into it:
 
 ```shell
