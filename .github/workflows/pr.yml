@@ -9,10 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
       - name: Install NPM
         uses: ./.github/workflows/install-npm.yml
-
       - name: Install SFDX
         uses: ./.github/workflows/install-sfdx.yml
 
@@ -43,14 +41,15 @@ jobs:
       - name: Test
         run: npm run test:lwc
 
+  connect-to-salesforce:
+    needs: [prepare, check-formatting, lint, test]
+    uses: ./.github/workflows/connect-to-salesforce.yml
+    secrets:
+      sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
+
   validate-in-salesforce:
     runs-on: ubuntu-latest
-    needs: [prepare, check-formatting, lint, test]
+    needs: connect-to-salesforce
     steps:
-      - name: Connect to Salesforce
-        uses: ./.github/workflows/connect-to-salesforce.yml
-        secrets:
-          sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
-
       - name: Validate in Salesforce
         run: npm run sf:validate
