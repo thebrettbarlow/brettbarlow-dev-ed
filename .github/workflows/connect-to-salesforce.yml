@@ -10,6 +10,8 @@ jobs:
   connect-to-salesforce:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Connect to Salesforce
         run: |
           echo ${{ secrets.sfdx_auth_url }} > sfdxurlfile.txt
