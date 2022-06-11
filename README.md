@@ -1,8 +1,8 @@
 # Brett Barlow's Salesforce Developer Org
 
 ![Salesforce CI](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-ci.yml/badge.svg)
-[![Apex Code Coverage](https://codecov.io/gh/thebrettbarlow/brettbarlow-dev-ed/branch/main/graph/badge.svg?token=33XF1HO3VI&flag=apex)](https://codecov.io/gh/thebrettbarlow/brettbarlow-dev-ed)
-[![LWC Code Coverage](https://codecov.io/gh/thebrettbarlow/brettbarlow-dev-ed/branch/main/graph/badge.svg?token=33XF1HO3VI&flag=lwc)](https://codecov.io/gh/thebrettbarlow/brettbarlow-dev-ed)
+![Codecov](https://img.shields.io/codecov/c/github/thebrettbarlow/brettbarlow-dev-ed?flag=apex&label=Apex%20Codecov&logo=codecov&token=33XF1HO3VI)
+![Codecov](https://img.shields.io/codecov/c/github/thebrettbarlow/brettbarlow-dev-ed?flag=lwc&label=LWC%20Codecov&logo=codecov&token=33XF1HO3VI)
 
 https://brettbarlow-dev-ed.my.site.com
 
