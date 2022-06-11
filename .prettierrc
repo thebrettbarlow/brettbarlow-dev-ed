@@ -2,7 +2,6 @@
   "trailingComma": "none",
   "singleQuote": true,
   "tabWidth": 2,
-  "apexInsertFinalNewline": false,
   "overrides": [
     {
       "files": "**/lwc/**/*.html",
