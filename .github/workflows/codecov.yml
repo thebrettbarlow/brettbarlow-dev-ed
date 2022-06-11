@@ -1,0 +1,50 @@
+name: Code Coverage
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Salesforce Scratch Org]
+    types:
+      - completed
+
+jobs:
+  apex-codecov:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+
+      - name: Authenticate to Salesforce
+        uses: ./.github/actions/auth-to-salesforce
+        with:
+          sfdx_auth_url: ${{ secrets.SFDX_AUTH_URL }}
+
+      - name: Run Tests
+        run: npm run test:apex:coverage
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: Apex
+
+  lwc-codecov:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Prepare
+        uses: ./.github/actions/prepare
+
+      - name: Run Tests
+        run: npm run test:lwc:coverage
+
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: LWC

@@ -1,0 +1,23 @@
+name: Authenticate to Salesforce
+description: Authenticates to Salesforce via an SFDX URL
+
+inputs:
+  sfdx_auth_url:
+    description: SFDX URL to use when authenticating to Salesforce
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Authenticate to Salesforce
+      env:
+        org_alias: 'brettbarlow-dev-ed-ci'
+        sfdx_url_file: 'sfdxurlfile.txt'
+      run: |
+        echo "${{ inputs.sfdx_auth_url }}" > "$sfdx_url_file"
+        sfdx auth:sfdxurl:store \
+          --setalias="$org_alias" \
+          --setdefaultusername \
+          --setdefaultdevhubusername \
+          --sfdxurlfile="$sfdx_url_file"
+      shell: bash

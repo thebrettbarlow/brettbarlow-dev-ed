@@ -1,18 +1,61 @@
-# Salesforce DX Project: Next Steps
+# Brett Barlow's Salesforce Developer Org
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+![Salesforce CI](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-ci.yml/badge.svg)
 
-## How Do You Plan to Deploy Your Changes?
+https://brettbarlow-dev-ed.my.site.com
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+This repo includes metadata for projects I work on in my Salesforce Developer Org. Feel free to [raise an issue](https://github.com/thebrettbarlow/brettbarlow-dev-ed/issues) or [contact me](https://brettbarlow-dev-ed.my.site.com/contact) if you have questions.
 
-## Configure Your Salesforce DX Project
+## Build a Scratch Org
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+![Salesforce Scratch Org](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-scratch.yml/badge.svg)
 
-## Read All About It
+#### 1. Clone the repo and `cd` into it:
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+```shell
+git clone https://github.com/thebrettbarlow/brettbarlow-dev-ed.git
+cd brettbarlow-dev-ed
+```
+
+#### 2. Set a Default DevHub
+
+```shell
+sfdx force:config:set defaultdevhubusername=your_devhub
+```
+
+#### 3. Build the Scratch Org
+
+```shell
+./scripts/build_scratch_org.sh
+```
+
+## Dev Dependencies
+
+These are required to work with this project:
+
+```shell
+# Salesforce CLI: https://developer.salesforce.com/tools/sfdxcli
+npm install sfdx-cli --global
+npm install @salesforce/cli --global
+```
+
+This is required to run `npm run lint:*` commands:
+
+```shell
+# Salesforce Code Analyzer: https://forcedotcom.github.io/sfdx-scanner
+sfdx plugins:install @salesforce/sfdx-scanner@latest-pilot
+```
+
+## General Notes
+
+#### Prettier
+
+Anonymous Apex files end in `.apex` and `prettier-plugin-apex` needs the
+`--parser apex-anonymous` when parsing these. This is why there are `*:apex:scripts`
+commands and a specific `lint-staged` rule.
+
+#### Running Tests for Pull Requests
+
+The `Test` job of [pr.yml](./.github/workflows/pr.yml) runs LWC tests, but does not
+run Apex tests because they have not been deployed to the org yet. We run Apex tests
+during the `validate-in-salesforce` job.
