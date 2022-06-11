@@ -1,10 +1,15 @@
 # Brett Barlow's Salesforce Developer Org
 
 ![Salesforce CI](https://github.com/thebrettbarlow/brettbarlow-dev-ed/actions/workflows/salesforce-ci.yml/badge.svg)
+![Codecov](https://img.shields.io/codecov/c/github/thebrettbarlow/brettbarlow-dev-ed?flag=apex&label=Apex&logo=codecov&token=33XF1HO3VI)
+![Codecov](https://img.shields.io/codecov/c/github/thebrettbarlow/brettbarlow-dev-ed?flag=lwc&label=LWC&logo=codecov&token=33XF1HO3VI)
 
 https://brettbarlow-dev-ed.my.site.com
 
-This repo includes metadata for projects I work on in my Salesforce Developer Org. Feel free to [raise an issue](https://github.com/thebrettbarlow/brettbarlow-dev-ed/issues) or [contact me](https://brettbarlow-dev-ed.my.site.com/contact) if you have questions.
+This repo includes metadata for projects I work on in my Salesforce Developer Org.
+Learn more about the projects
+[here](https://brettbarlow-dev-ed.my.site.com/projects). Feel free to
+[contact me](https://brettbarlow-dev-ed.my.site.com/contact) if you have questions.
 
 ## Build a Scratch Org
 
@@ -56,6 +61,6 @@ commands and a specific `lint-staged` rule.
 
 #### Running Tests for Pull Requests
 
-The `Test` job of [pr.yml](./.github/workflows/pr.yml) runs LWC tests, but does not
-run Apex tests because they have not been deployed to the org yet. We run Apex tests
-during the `validate-in-salesforce` job.
+The `test` job of [pr.yml](./.github/workflows/pr.yml) only runs LWC tests
+because any modified Apex tests have not been deployed to the org yet. We
+run Apex tests during the `validate-in-salesforce` job.
