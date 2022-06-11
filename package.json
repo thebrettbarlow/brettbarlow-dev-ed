@@ -34,7 +34,7 @@
     "test:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10",
     "test:apex:coverage": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10 --codecoverage --detailedcoverage --outputdir=coverage/apex --resultformat=human",
     "test:lwc": "sfdx-lwc-jest -- --passWithNoTests",
-    "test:lwc:coverage": "sfdx-lwc-jest --coverage"
+    "test:lwc:coverage": "sfdx-lwc-jest --coverage -- --passWithNoTests"
   },
   "devDependencies": {
     "@lwc/eslint-plugin-lwc": "^1.3.0",
