@@ -8,7 +8,7 @@ https://brettbarlow-dev-ed.my.site.com
 
 This repo includes metadata for projects I work on in my Salesforce Developer Org.
 Learn more about the projects
-[here](https://brettbarlow-dev-ed.my.site.com/projects) and feel free to
+[here](https://brettbarlow-dev-ed.my.site.com/projects). Feel free to
 [contact me](https://brettbarlow-dev-ed.my.site.com/contact) if you have questions.
 
 ## Build a Scratch Org
