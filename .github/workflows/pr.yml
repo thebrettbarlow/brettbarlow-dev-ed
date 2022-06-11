@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  check-formatting:
+  formatting:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,7 +50,7 @@ jobs:
         run: npm run test:lwc
 
   validate-in-salesforce:
-    needs: [check-formatting, lint, test]
+    needs: [formatting, lint, test]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
