@@ -30,7 +30,7 @@
     "lint:lwc": "sfdx scanner:run --target='**/lwc/**/*.js' --eslintconfig=.eslintrc",
     "prepare": "husky install",
     "sf:open": "sfdx force:org:open",
-    "sf:validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --wait=10",
+    "sf:validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --testlevel=RunLocalTests --wait=10",
     "test:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10",
     "test:apex:coverage": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10 --codecoverage --detailedcoverage --outputdir=coverage/apex --resultformat=human",
     "test:lwc": "sfdx-lwc-jest -- --passWithNoTests",

@@ -29,7 +29,7 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          flags: Apex
+          flags: apex
 
   lwc-codecov:
     runs-on: ubuntu-latest
@@ -47,4 +47,4 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          flags: LWC
+          flags: lwc
