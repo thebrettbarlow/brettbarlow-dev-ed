@@ -1,0 +1,10 @@
+{
+  "activeViewId": "0af0db75-aceb-4765-82ae-7fe084c03c4c",
+  "appPageId": "cfd907ec-2754-4dca-845c-05387d321569",
+  "configurationTags": [],
+  "id": "ac7c9e86-8975-46ac-a091-d1162a7d6ba4",
+  "label": "Resume",
+  "routeType": "custom-resume",
+  "type": "route",
+  "urlPrefix": "resume"
+}
