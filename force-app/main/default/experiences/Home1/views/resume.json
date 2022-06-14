@@ -18,9 +18,11 @@
             {
               "components": [
                 {
-                  "componentAttributes": {},
+                  "componentAttributes": {
+                    "resumeId": "a011g00000GRBXHAA5"
+                  },
                   "componentName": "c:resume",
-                  "id": "6a98bc26-dbf7-41cc-bca5-ebb78885ed1c",
+                  "id": "1c8d90d8-bb99-4251-96c3-de95fb1c58c6",
                   "renderPriority": "NEUTRAL",
                   "renditionMap": {},
                   "type": "component"

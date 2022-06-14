@@ -1,1 +1,14 @@
-<template> Hello, Resume! </template>
+<template>
+  <template if:true={resume.error}>{resume.error}</template>
+  <template if:true={resume.data}>
+    <h1 class="slds-text-heading_large slds-text-align_center resume-title">
+      {title}
+    </h1>
+    <div class="slds-grid">
+      <img class="slds-size_1-of-5 headshot" src={headshot} />
+      <div class="slds-size_2-of-5">
+        <h2 class="slds-text-heading_medium">{name}</h2>
+      </div>
+    </div>
+  </template>
+</template>

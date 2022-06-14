@@ -29,6 +29,7 @@
     "lint:apex": "sfdx scanner:run --target='**/*.apex,**/*.cls,**/*.trigger' --engine=pmd",
     "lint:lwc": "sfdx scanner:run --target='**/lwc/**/*.js' --eslintconfig=.eslintrc",
     "prepare": "husky install",
+    "prettier": "prettier --write '**/*.{cls,trigger}' '**/lwc/**/*.{css,html,js}' '**/*.{json,md,yml}'",
     "sf:open": "sfdx force:org:open",
     "sf:validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --testlevel=RunLocalTests --wait=10",
     "test:apex": "sfdx force:apex:test:run --testlevel=RunLocalTests --wait=10",

@@ -8,4 +8,14 @@
         <target>lightningCommunity__Page</target>
         <target>lightningCommunity__Default</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+        <property
+            name="resumeId"
+            type="String"
+            datasource="apex://ResumePicklist"
+            label="Resume"
+        />
+      </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

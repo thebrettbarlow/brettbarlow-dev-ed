@@ -59,5 +59,6 @@ SFDC_Default_Navigation_Home.navigationMenu
 **/pages/StdExceptionTemplate
 **/pages/Unauthorized
 **/pages/UnderConstruction
-**/profiles/Admin
+# **/profiles/Admin doesn't seem to work
+Admin.profile
 **/staticresources/SiteSamples
