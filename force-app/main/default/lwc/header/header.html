@@ -36,6 +36,15 @@
               </ul>
             </nav>
           </div>
+          <div class="slds-col slds-col_bump-bottom">
+            <lightning-button
+              variant="brand"
+              label="Projects"
+              title="View Projects"
+              onclick={navigateToProjects}
+              class="slds-var-p-left_small"
+            ></lightning-button>
+          </div>
         </div>
       </div>
       <div class="slds-col slds-size_1-of-6">
@@ -66,6 +75,15 @@
               <c-navigation-menu-item item={item}></c-navigation-menu-item>
             </li>
           </template>
+          <li class="slds-grid slds-grid_vertical-align-center">
+            <lightning-button
+              variant="brand"
+              label="Projects"
+              title="View Projects"
+              onclick={navigateToProjects}
+              class="slds-var-p-left_small"
+            ></lightning-button>
+          </li>
         </ul>
       </nav>
     </div>

@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Logo__c</fullName>
+    <description>Name of the Static Resource in the /resume folder</description>
     <externalId>false</externalId>
+    <inlineHelpText>Name of the Static Resource in the /resume folder</inlineHelpText>
     <label>Logo</label>
-    <length>32768</length>
+    <length>255</length>
+    <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Html</type>
-    <visibleLines>25</visibleLines>
+    <type>Text</type>
+    <unique>false</unique>
 </CustomField>

@@ -3,6 +3,14 @@
 }
 
 .headshot {
-  border-radius: 1em;
+  border-radius: var(--lwc-borderRadiusCircle, 50%);
   max-height: 10em;
+}
+
+.website-icons {
+  max-height: 2em;
+}
+
+.certification-icons {
+  max-height: 5em;
 }

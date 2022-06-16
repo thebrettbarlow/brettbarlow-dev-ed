@@ -74,13 +74,24 @@ export default class Header extends NavigationMixin(LightningElement) {
     }
   }
 
-  navigateHome(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
+  navigateHome(event) {
+    event.stopPropagation();
+    event.preventDefault();
     this[NavigationMixin.Navigate]({
       type: 'comm__namedPage',
       attributes: {
         name: 'Home'
+      }
+    });
+  }
+
+  navigateToProjects(event) {
+    event.stopPropagation();
+    event.preventDefault();
+    this[NavigationMixin.Navigate]({
+      type: 'comm__namedPage',
+      attributes: {
+        name: 'Projects__c'
       }
     });
   }
@@ -97,6 +108,11 @@ export default class Header extends NavigationMixin(LightningElement) {
 
   navigateHomeFromHamburgerMenu(event) {
     this.navigateHome(event);
+    this.showHamburgerMenu = false;
+  }
+
+  navigateToProjectsFromHamburgerMenu(event) {
+    this.navigateToProjects(event);
     this.showHamburgerMenu = false;
   }
 
