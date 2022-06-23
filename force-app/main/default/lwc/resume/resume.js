@@ -1,6 +1,7 @@
 import { LightningElement, api, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
-import RESUME_ASSETS from '@salesforce/resourceUrl/resume';
+import getResumeEntryIds from '@salesforce/apex/ResumeSelector.getResumeEntryIds';
+import getUniqueSkillsFromResumeEntries from '@salesforce/apex/ResumeSelector.getUniqueSkillsFromResumeEntries';
 import EMAIL_FIELD from '@salesforce/schema/Resume__c.Email__c';
 import FIRST_NAME_FIELD from '@salesforce/schema/Resume__c.First_Name__c';
 import GITHUB_FIELD from '@salesforce/schema/Resume__c.GitHub__c';
@@ -16,10 +17,10 @@ import TRAILHEAD_FIELD from '@salesforce/schema/Resume__c.Trailhead__c';
 import WEBSITE_FIELD from '@salesforce/schema/Resume__c.Website__c';
 
 export default class Resume extends LightningElement {
-  @api resumeId;
+  @api recordId;
 
   @wire(getRecord, {
-    recordId: '$resumeId',
+    recordId: '$recordId',
     fields: [
       EMAIL_FIELD,
       FIRST_NAME_FIELD,
@@ -38,12 +39,21 @@ export default class Resume extends LightningElement {
   })
   resume;
 
+  @wire(getUniqueSkillsFromResumeEntries, { resumeId: '$recordId' })
+  skills;
+
+  @wire(getResumeEntryIds, { resumeId: '$recordId', type: 'Job' })
+  jobEntryIds;
+
+  @wire(getResumeEntryIds, { resumeId: '$recordId', type: 'Education' })
+  educationEntryIds;
+
   get title() {
     return this.resume.data.fields.Name.value;
   }
 
   get headshot() {
-    return RESUME_ASSETS + '/' + this.resume.data.fields.Headshot__c.value;
+    return this.resume.data.fields.Headshot__c.value;
   }
 
   get name() {
@@ -72,17 +82,14 @@ export default class Resume extends LightningElement {
     return this.resume.data.fields.Phone__c.value;
   }
 
-  linkedinSrc = RESUME_ASSETS + '/linkedin.png';
   get linkedin() {
     return this.resume.data.fields.LinkedIn__c.value;
   }
 
-  githubSrc = RESUME_ASSETS + '/github.png';
   get github() {
     return this.resume.data.fields.GitHub__c.value;
   }
 
-  trailheadSrc = RESUME_ASSETS + '/trailhead.png';
   get trailhead() {
     return this.resume.data.fields.Trailhead__c.value;
   }
@@ -96,16 +103,6 @@ export default class Resume extends LightningElement {
   }
 
   get certifications() {
-    return this.resume.data.fields.Salesforce_Certifications__c.value
-      .split(';')
-      .map((certificationName, index) => ({
-        id: index,
-        title: `Certified ${certificationName}`,
-        src:
-          RESUME_ASSETS +
-          '/certifications/' +
-          certificationName.replaceAll(' ', '-') +
-          '.png'
-      }));
+    return this.resume.data.fields.Salesforce_Certifications__c.value;
   }
 }

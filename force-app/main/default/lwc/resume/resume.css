@@ -1,16 +1,11 @@
+:host {
+  --salesforce-certifications-max-height: 3em;
+}
+
 .resume-title {
   white-space: normal;
 }
 
-.headshot {
-  border-radius: var(--lwc-borderRadiusCircle, 50%);
-  max-height: 10em;
-}
-
 .website-icons {
   max-height: 2em;
-}
-
-.certification-icons {
-  max-height: 5em;
 }

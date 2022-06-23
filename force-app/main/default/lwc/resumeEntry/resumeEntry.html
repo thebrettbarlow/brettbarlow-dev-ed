@@ -1,0 +1,47 @@
+<template>
+  <template if:true={resumeEntry.error}>{resumeEntry.error}</template>
+  <template if:true={resumeEntry.data}>
+    <div class="slds-grid">
+      <div class="slds-col">
+        <div class="slds-grid">
+          <div class="slds-col">
+            <img src={logo} class="resume-entry-logo" />
+          </div>
+          <div class="slds-col">
+            <h3 class="slds-text-heading_medium">{title}</h3>
+            <p>{role}</p>
+          </div>
+        </div>
+      </div>
+      <div class="slds-col">
+        <p>
+          <lightning-formatted-date-time
+            value={from}
+            month="long"
+            year="numeric"
+            time-zone="UTC"
+          ></lightning-formatted-date-time
+          >&nbsp;-&nbsp;
+          <template if:true={hasEnded}
+            ><lightning-formatted-date-time
+              value={to}
+              month="long"
+              year="numeric"
+              time-zone="UTC"
+            ></lightning-formatted-date-time
+          ></template>
+          <template if:false={hasEnded}>Present</template>
+        </p>
+        <p>{location}</p>
+      </div>
+    </div>
+    <div>
+      <c-resume-skills skills={skills}></c-resume-skills>
+    </div>
+    <div>
+      <lightning-formatted-rich-text
+        value={summary}
+      ></lightning-formatted-rich-text>
+    </div>
+  </template>
+</template>

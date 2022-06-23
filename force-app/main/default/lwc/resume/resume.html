@@ -1,66 +1,80 @@
 <template>
   <template if:true={resume.error}>{resume.error}</template>
   <template if:true={resume.data}>
-    <h1 class="slds-text-heading_large slds-text-align_center resume-title">
+    <h1
+      class="
+        slds-text-heading_large
+        slds-text-align_center
+        slds-var-p-bottom_medium
+        resume-title
+      "
+    >
       {title}
     </h1>
-    <div class="slds-grid">
-      <div class="slds-size_1-of-5">
-        <img src={headshot} class="headshot" />
+    <div class="slds-grid slds-grid_align-space">
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+        <c-resume-contact-card
+          headshot={headshot}
+          name={name}
+          location={location}
+          email={email}
+          phone={phone}
+        ></c-resume-contact-card>
       </div>
-      <div class="slds-size_2-of-5">
-        <h2 class="slds-text-heading_medium">{name}</h2>
-        <h4 class="slds-text-heading_small">{location}</h4>
-        <p>
-          <lightning-formatted-email
-            value={email}
-            hide-icon
-          ></lightning-formatted-email>
-        </p>
-        <p>
-          <lightning-formatted-phone value={phone}></lightning-formatted-phone>
-        </p>
-      </div>
-      <div class="slds-size_2-of-5">
-        <div class="slds-grid">
-          <template if:true={linkedin}>
-            <a href={linkedin} target="_blank" title="LinkedIn">
-              <img src={linkedinSrc} class="website-icons" />
-            </a>
-          </template>
-          <template if:true={github}>
-            <a href={github} target="_blank" title="GitHub">
-              <img src={githubSrc} class="website-icons" />
-            </a>
-          </template>
-          <template if:true={trailhead}>
-            <a href={trailhead} target="_blank" title="Trailhead">
-              <img src={trailheadSrc} class="website-icons" />
-            </a>
-          </template>
+
+      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-5">
+        <c-resume-links
+          linkedin={linkedin}
+          github={github}
+          trailhead={trailhead}
+          website={website}
+        ></c-resume-links>
+        <div class="slds-var-p-top_x-small">
+          <template if:true={skills.error}>{skills.error}</template>
+          <c-resume-skills skills={skills.data}></c-resume-skills>
         </div>
-        <p>
-          <lightning-formatted-url
-            value={website}
-            target="_blank"
-          ></lightning-formatted-url>
-        </p>
       </div>
     </div>
-    <lightning-formatted-rich-text
-      value={summary}
-    ></lightning-formatted-rich-text>
+
+    <div class="slds-grid slds-grid_align-center">
+      <div class="slds-size_1-of-1 slds-medium-size_2-of-3">
+        <div class="slds-grid slds-grid_align-center">
+          <c-salesforce-certifications
+            certifications={certifications}
+          ></c-salesforce-certifications>
+        </div>
+
+        <div class="slds-grid slds-grid_align-center slds-var-p-top_small">
+          <lightning-formatted-rich-text
+            value={summary}
+          ></lightning-formatted-rich-text>
+        </div>
+      </div>
+    </div>
+
+    Jobs:
+    <template if:true={jobEntryIds.error}>{jobEntryIds.error}</template>
     <template
-      if:true={certifications}
-      for:each={certifications}
-      for:item="certification"
+      if:true={jobEntryIds.data}
+      for:each={jobEntryIds.data}
+      for:item="jobEntryId"
     >
-      <img
-        key={certification.id}
-        title={certification.title}
-        src={certification.src}
-        class="certification-icons"
-      />
+      <c-resume-entry key={jobEntryId} record-id={jobEntryId}></c-resume-entry>
+    </template>
+
+    Education:
+    <template if:true={educationEntryIds.error}
+      >{educationEntryIds.error}</template
+    >
+    <template
+      if:true={educationEntryIds.data}
+      for:each={educationEntryIds.data}
+      for:item="educationEntryId"
+    >
+      <c-resume-entry
+        key={educationEntryId}
+        record-id={educationEntryId}
+      ></c-resume-entry>
     </template>
   </template>
 </template>

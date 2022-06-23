@@ -3,19 +3,15 @@
     <apiVersion>54.0</apiVersion>
     <isExposed>true</isExposed>
     <masterLabel>Resume</masterLabel>
-    <description>Displays my resume on the website</description>
+    <description>Displays the resume</description>
     <targets>
-        <target>lightningCommunity__Page</target>
-        <target>lightningCommunity__Default</target>
+        <target>lightning__RecordPage</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightningCommunity__Default">
-        <property
-            name="resumeId"
-            type="String"
-            datasource="apex://ResumePicklist"
-            label="Resume"
-        />
-      </targetConfig>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Resume__c</object>
+            </objects>
+        </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

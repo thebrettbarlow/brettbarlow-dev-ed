@@ -181,6 +181,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Resume_Entry__c.Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Resume_Entry__c.Logo__c</field>
         <readable>true</readable>
     </fieldPermissions>

@@ -1,0 +1,17 @@
+<template>
+  <div class="slds-grid slds-wrap">
+    <template
+      if:true={certifications}
+      for:each={certifications}
+      for:item="certification"
+    >
+      <div class="slds-col slds-grow-none" key={certification.id}>
+        <img
+          title={certification.title}
+          src={certification.src}
+          class="salesforce-certification"
+        />
+      </div>
+    </template>
+  </div>
+</template>

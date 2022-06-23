@@ -1,0 +1,3 @@
+.resume-entry-logo {
+  max-height: var(--resume-entry-logo-max-height, 5em);
+}

@@ -1,0 +1,6 @@
+<template>
+  <template if:true={resumeId.data}>
+    <c-resume record-id={resumeId.data}></c-resume>
+  </template>
+  <template if:true={resumeId.error}>{resumeId.error}</template>
+</template>

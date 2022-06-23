@@ -5,11 +5,15 @@ global class ResumePicklist extends VisualEditor.DynamicPickList {
 
   global override VisualEditor.DynamicPickListRows getValues() {
     VisualEditor.DynamicPickListRows picklistValues = new VisualEditor.DynamicPickListRows();
-    List<Resume__c> resumes = [SELECT Id, Name FROM Resume__c];
+    List<Resume__c> resumes = [
+      SELECT Id, Name
+      FROM Resume__c
+      ORDER BY Name ASC
+    ];
     for (Resume__c resume : resumes) {
       VisualEditor.DataRow value = new VisualEditor.DataRow(
         resume.Name,
-        String.valueOf(resume.Id) // https://salesforce.stackexchange.com/a/255411/54914
+        resume.Name
       );
       picklistValues.addRow(value);
     }
