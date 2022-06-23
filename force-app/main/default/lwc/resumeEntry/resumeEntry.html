@@ -2,18 +2,21 @@
   <template if:true={resumeEntry.error}>{resumeEntry.error}</template>
   <template if:true={resumeEntry.data}>
     <div class="slds-grid">
-      <div class="slds-col">
-        <div class="slds-grid">
-          <div class="slds-col">
-            <img src={logo} class="resume-entry-logo" />
-          </div>
-          <div class="slds-col">
-            <h3 class="slds-text-heading_medium">{title}</h3>
-            <p>{role}</p>
-          </div>
+      <template if:true={logo}>
+        <div class="slds-var-p-right_medium">
+          <img src={logo} class="logo" />
+        </div>
+      </template>
+
+      <div>
+        <h3 class="slds-text-heading_medium">{title}</h3>
+        <p class="slds-col slds-var-p-bottom_xx-small">{role}</p>
+        <div class="slds-show_medium">
+          <c-resume-skills skills={skills}></c-resume-skills>
         </div>
       </div>
-      <div class="slds-col">
+
+      <div class="slds-col_bump-left">
         <p>
           <lightning-formatted-date-time
             value={from}
@@ -35,13 +38,16 @@
         <p>{location}</p>
       </div>
     </div>
+
     <div>
-      <c-resume-skills skills={skills}></c-resume-skills>
-    </div>
-    <div>
-      <lightning-formatted-rich-text
-        value={summary}
-      ></lightning-formatted-rich-text>
+      <div class="slds-hide_medium">
+        <c-resume-skills skills={skills}></c-resume-skills>
+      </div>
+      <div class="slds-var-p-top_small">
+        <lightning-formatted-rich-text
+          value={summary}
+        ></lightning-formatted-rich-text>
+      </div>
     </div>
   </template>
 </template>

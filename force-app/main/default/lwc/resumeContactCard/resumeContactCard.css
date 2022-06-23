@@ -1,5 +1,12 @@
 .headshot {
   border-radius: var(--lwc-borderRadiusCircle, 50%);
-  max-height: var(--resume-contact-card-headshot-max-height, 10em);
-  max-width: var(--resume-contact-card-headshot-max-width, 10em);
+  max-height: 10em;
+  max-width: 10em;
+}
+
+@media (max-width: 480px) {
+  .headshot {
+    max-height: 7em;
+    max-width: 7em;
+  }
 }
