@@ -19,10 +19,10 @@
               "components": [
                 {
                   "componentAttributes": {
-                    "resumeId": ""
+                    "resumeName": "Salesforce Engineer"
                   },
-                  "componentName": "c:resume",
-                  "id": "1c8d90d8-bb99-4251-96c3-de95fb1c58c6",
+                  "componentName": "c:resumeContainer",
+                  "id": "03b7a320-7e60-4371-a6cb-00abc49dd8a6",
                   "renderPriority": "NEUTRAL",
                   "renditionMap": {},
                   "type": "component"
