@@ -44,6 +44,10 @@ sfdx force:source:deploy \
   --metadata=ExperienceBundle,NavigationMenu,Network,ApexPage,Profile,CustomSite
 echo ""
 
+echo "Running a one time source:push --force"
+sfdx force:source:push --force
+echo ""
+
 echo "Assigning Permission Sets..."
 sfdx force:user:permset:assign \
   --permsetname=Projects_User

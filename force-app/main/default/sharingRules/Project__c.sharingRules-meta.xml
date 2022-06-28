@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingGuestRules>
         <fullName>Guest_User_Read_Only</fullName>
@@ -10,7 +10,7 @@
         <criteriaItems>
             <field>Name</field>
             <operation>notEqual</operation>
-            <value />
+            <value></value>
         </criteriaItems>
         <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
     </sharingGuestRules>
