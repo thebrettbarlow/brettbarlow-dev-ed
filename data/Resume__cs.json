@@ -1,0 +1,23 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Resume__c",
+        "referenceId": "Resume__cRef1"
+      },
+      "Name": "Salesforce Engineer",
+      "Email__c": "me@brettbarlow.com",
+      "First_Name__c": "Brett",
+      "GitHub__c": "https://github.com/thebrettbarlow",
+      "Headshot__c": "headshot.jpg",
+      "Last_Name__c": "Barlow",
+      "LinkedIn__c": "https://www.linkedin.com/in/brettbarlow",
+      "Location__c": "San Francisco, CA",
+      "Phone__c": "4158281345",
+      "Salesforce_Certifications__c": "Administrator;Advanced Administrator;Experience Cloud Consultant;Pardot Consultant;Pardot Specialist;Platform App Builder;Platform Developer I;Platform Developer II;Sales Cloud Consultant;Service Cloud Consultant",
+      "Summary__c": "<p>7 years of Salesforce experience and holds 10 Salesforce certifications, including Platform Developer II. </p><p>Self-taught and self-driven Salesforce Engineer who has worked on 19 Salesforce implementations.</p><p><br></p><p><strong>Innovator:</strong> Creative thinker with the skills to design and execute ideas that push the limits of Salesforce.</p><p><strong>Leader:</strong> Inspiring people manager who mobilizes teams and leads by example.</p><p><strong>Architect:</strong> Leverages a deep understanding of Salesforce to design and implement scalable solutions.</p>",
+      "Trailhead__c": "https://trailblazer.me/id/brett",
+      "Website__c": "https://www.brettbarlow.com"
+    }
+  ]
+}

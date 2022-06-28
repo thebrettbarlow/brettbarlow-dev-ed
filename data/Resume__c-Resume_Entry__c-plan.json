@@ -1,0 +1,14 @@
+[
+  {
+    "sobject": "Resume__c",
+    "saveRefs": true,
+    "resolveRefs": false,
+    "files": ["Resume__cs.json"]
+  },
+  {
+    "sobject": "Resume_Entry__c",
+    "saveRefs": false,
+    "resolveRefs": true,
+    "files": ["Resume_Entry__cs.json"]
+  }
+]
