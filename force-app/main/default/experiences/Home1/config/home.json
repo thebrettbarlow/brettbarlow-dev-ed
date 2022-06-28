@@ -4,5 +4,14 @@
   "isProgressiveRenderingEnabled": false,
   "mainAppPageId": "cfd907ec-2754-4dca-845c-05387d321569",
   "preferredDomain": "none",
+  "trustedSitesForScript": [
+    {
+      "id": "7deddd14-1b4f-4eb8-9638-f0b0f2b5a08e",
+      "isActive": true,
+      "trustedSiteName": "www.googletagmanager.com",
+      "trustedSiteUrl": "https://www.googletagmanager.com/gtag/js",
+      "type": "trustedSitesForScripts"
+    }
+  ],
   "type": "site"
 }
