@@ -106,6 +106,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ResumePicklist</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ResumePicklistTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -298,7 +302,7 @@
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Resume__c</object>
+        <object>Resume_Entry__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -307,7 +311,7 @@
         <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Resume_Entry__c</object>
+        <object>Resume__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <pageAccesses>
