@@ -9,7 +9,7 @@
     <type>MultiselectPicklist</type>
     <valueSet>
         <valueSetDefinition>
-            <sorted>true</sorted>
+            <sorted>false</sorted>
             <value>
                 <fullName>Administrator</fullName>
                 <default>false</default>
