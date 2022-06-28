@@ -110,7 +110,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>ResumeSelector</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>SiteLoginController</apexClass>
