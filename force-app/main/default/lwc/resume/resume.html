@@ -15,8 +15,8 @@
         >
           {title}
         </h1>
-        <div class="slds-grid slds-grid_align-spread slds-wrap">
-          <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+        <div class="slds-grid slds-grid_align-space slds-wrap">
+          <div class="slds-col slds-var-p-bottom_medium">
             <c-resume-contact-card
               headshot={headshot}
               name={name}
@@ -26,46 +26,45 @@
             ></c-resume-contact-card>
           </div>
 
-          <div
-            class="
-              slds-col
-              slds-var-p-top_small
-              slds-size_1-of-1
-              slds-medium-size_1-of-3
-            "
-          >
+          <div class="slds-col slds-var-p-bottom_medium">
             <c-resume-links
               linkedin={linkedin}
               github={github}
               trailhead={trailhead}
               website={website}
             ></c-resume-links>
-            <div class="slds-var-p-top_x-small">
-              <template if:true={skills.error}>{skills.error}</template>
-              <c-resume-skills skills={skills.data}></c-resume-skills>
-            </div>
           </div>
         </div>
 
-        <div class="slds-grid slds-grid_align-center slds-var-p-top_small">
+        <div class="slds-grid slds-grid_align-center">
           <c-salesforce-certifications
             certifications={certifications}
           ></c-salesforce-certifications>
         </div>
 
-        <div class="slds-grid slds-grid_align-center slds-var-p-top_small">
+        <div class="slds-grid slds-grid_align-center slds-var-p-top_medium">
           <lightning-formatted-rich-text
             value={summary}
           ></lightning-formatted-rich-text>
         </div>
 
+        <div class="slds-var-p-top_medium">
+          <template if:true={skills.error}>{skills.error}</template>
+          <c-resume-skills skills={skills.data}></c-resume-skills>
+        </div>
+
         <template if:true={jobEntryIds.error}>{jobEntryIds.error}</template>
+        <template if:true={jobEntryIds.data}>
+          <h2 class="slds-text-heading_medium slds-var-p-top_medium">
+            Professional Experience
+          </h2>
+        </template>
         <template
           if:true={jobEntryIds.data}
           for:each={jobEntryIds.data}
           for:item="jobEntryId"
         >
-          <div class="slds-var-p-top_medium" key={jobEntryId}>
+          <div class="slds-var-p-top_large" key={jobEntryId}>
             <c-resume-entry record-id={jobEntryId}></c-resume-entry>
           </div>
         </template>
@@ -73,12 +72,17 @@
         <template if:true={educationEntryIds.error}
           >{educationEntryIds.error}</template
         >
+        <template if:true={educationEntryIds.data}>
+          <h2 class="slds-text-heading_medium slds-var-p-top_medium">
+            Education
+          </h2>
+        </template>
         <template
           if:true={educationEntryIds.data}
           for:each={educationEntryIds.data}
           for:item="educationEntryId"
         >
-          <div class="slds-var-p-top_medium" key={educationEntryId}>
+          <div class="slds-var-p-top_large" key={educationEntryId}>
             <c-resume-entry record-id={educationEntryId}></c-resume-entry>
           </div>
         </template>

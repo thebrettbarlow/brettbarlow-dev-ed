@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
-import { getRecord } from 'lightning/uiRecordApi';
+import { getFieldValue, getRecord } from 'lightning/uiRecordApi';
 import RESUME_ASSETS from '@salesforce/resourceUrl/resume';
 import FROM_FIELD from '@salesforce/schema/Resume_Entry__c.From__c';
 import LOCATION_FIELD from '@salesforce/schema/Resume_Entry__c.Location__c';
@@ -29,7 +29,8 @@ export default class ResumeEntry extends LightningElement {
   resumeEntry;
 
   get logo() {
-    return `${RESUME_ASSETS}/${this.resumeEntry.data.fields.Logo__c.value}`;
+    const logo = getFieldValue(this.resumeEntry.data, LOGO_FIELD);
+    return logo ? `${RESUME_ASSETS}/${logo}` : null;
   }
 
   get title() {
