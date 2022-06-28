@@ -10,3 +10,55 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+# Metadata that has not been modified, but is returned in force:source:pull
+**/audience
+**/classes/ChangePasswordController
+**/classes/ChangePasswordControllerTest
+**/classes/CommunitiesLandingController
+**/classes/CommunitiesLandingControllerTest
+**/classes/CommunitiesLoginController
+**/classes/CommunitiesLoginControllerTest
+**/classes/CommunitiesSelfRegConfirmController
+**/classes/CommunitiesSelfRegConfirmControllerTest
+**/classes/CommunitiesSelfRegController
+**/classes/CommunitiesSelfRegControllerTest
+**/classes/ForgotPasswordController
+**/classes/ForgotPasswordControllerTest
+**/classes/MicrobatchSelfRegController
+**/classes/MicrobatchSelfRegControllerTest
+**/classes/MyProfilePageController
+**/classes/MyProfilePageControllerTest
+**/classes/SiteLoginController
+**/classes/SiteLoginControllerTest
+**/classes/SiteRegisterController
+**/classes/SiteRegisterControllerTest
+**/component
+# **/navigationMenus/SFDC_Default_Navigation_Home doesn't seem to work
+SFDC_Default_Navigation_Home.navigationMenu
+**/networkBranding
+**/pages/AnswersHome
+**/pages/BandwidthExceeded
+**/pages/ChangePassword
+**/pages/CommunitiesLogin
+**/pages/CommunitiesSelfReg
+**/pages/CommunitiesSelfRegConfirm
+**/pages/CommunitiesTemplate
+**/pages/Exception
+**/pages/FileNotFound
+**/pages/ForgotPassword
+**/pages/ForgotPasswordConfirm
+**/pages/IdeasHome
+**/pages/InMaintenance
+**/pages/MicrobatchSelfReg
+**/pages/MyProfilePage
+**/pages/SiteLogin
+**/pages/SiteRegister
+**/pages/SiteRegisterConfirm
+**/pages/SiteTemplate
+**/pages/StdExceptionTemplate
+**/pages/Unauthorized
+**/pages/UnderConstruction
+# **/profiles/Admin doesn't seem to work
+Admin.profile
+**/staticresources/SiteSamples

@@ -44,9 +44,11 @@ sfdx force:source:deploy \
   --metadata=ExperienceBundle,NavigationMenu,Network,ApexPage,Profile,CustomSite
 echo ""
 
-echo "Assigning Permission Set..."
+echo "Assigning Permission Sets..."
 sfdx force:user:permset:assign \
   --permsetname=Projects_User
+sfdx force:user:permset:assign \
+  --permsetname=Resume_User
 echo ""
 
 echo "Importing sample data..."

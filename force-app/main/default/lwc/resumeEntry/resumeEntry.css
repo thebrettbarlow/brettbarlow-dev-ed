@@ -1,0 +1,11 @@
+.logo {
+  max-height: 5em;
+  max-width: 5em;
+}
+
+@media (max-width: 480px) {
+  .logo {
+    max-height: 4em;
+    max-width: 4em;
+  }
+}

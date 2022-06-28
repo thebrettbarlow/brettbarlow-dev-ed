@@ -1,0 +1,5 @@
+<template>
+  <template if:true={skills} for:each={skills} for:item="skill">
+    <lightning-badge key={skill.id} label={skill.name}></lightning-badge>
+  </template>
+</template>

@@ -1,0 +1,3 @@
+.salesforce-certification {
+  max-height: var(--salesforce-certifications-max-height, 5em);
+}

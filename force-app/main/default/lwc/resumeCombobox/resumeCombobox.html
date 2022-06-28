@@ -1,0 +1,14 @@
+<template>
+  <template if:true={error}>{error}</template>
+  <template if:true={options}>
+    <lightning-combobox
+      name="resume"
+      label="Resume"
+      value={value}
+      placeholder="Select a Resume"
+      options={options}
+      onchange={handleChange}
+      variant="label-hidden"
+    ></lightning-combobox>
+  </template>
+</template>

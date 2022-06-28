@@ -1,0 +1,41 @@
+<template>
+  <div>
+    <div class="slds-grid slds-grid_align-center">
+      <template if:true={linkedin}>
+        <div class="slds-var-p-horizontal_x-small">
+          <c-clickable-image
+            href={linkedin}
+            src={linkedinSrc}
+            title="LinkedIn"
+          ></c-clickable-image>
+        </div>
+      </template>
+      <template if:true={github}>
+        <div class="slds-var-p-horizontal_x-small">
+          <c-clickable-image
+            href={github}
+            src={githubSrc}
+            title="GitHub"
+          ></c-clickable-image>
+        </div>
+      </template>
+      <template if:true={trailhead}>
+        <div class="slds-var-p-horizontal_x-small">
+          <c-clickable-image
+            href={trailhead}
+            src={trailheadSrc}
+            title="Trailhead"
+          ></c-clickable-image>
+        </div>
+      </template>
+    </div>
+    <div class="slds-var-p-top_x-small">
+      <p class="slds-text-align_center">
+        <lightning-formatted-url
+          value={website}
+          target="_blank"
+        ></lightning-formatted-url>
+      </p>
+    </div>
+  </div>
+</template>
