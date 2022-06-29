@@ -1,0 +1,100 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Resume_Entry__c",
+        "referenceId": "Resume_Entry__cRef1"
+      },
+      "Name": "Google",
+      "From__c": "2020-06-29",
+      "Location__c": "San Francisco, CA",
+      "Logo__c": "google.png",
+      "Resume__c": "@Resume__cRef1",
+      "Role__c": "Salesforce Engineer",
+      "Skills__c": "Apex;Java;TypeScript",
+      "Summary__c": "<p>Implemented solutions that scaled to a 25k+ user Salesforce org. Integrated Salesforce with Google services.</p>",
+      "To__c": null,
+      "Type__c": "Job"
+    },
+    {
+      "attributes": {
+        "type": "Resume_Entry__c",
+        "referenceId": "Resume_Entry__cRef2"
+      },
+      "Name": "Cloud for Good",
+      "From__c": "2016-08-08",
+      "Location__c": "Remote",
+      "Logo__c": "cloud-for-good.png",
+      "Resume__c": "@Resume__cRef1",
+      "Role__c": "Salesforce Consultant",
+      "Skills__c": "Apex;SOQL",
+      "Summary__c": "<p>Cloud for Good is a Salesforce Consulting Partner. I was the lead on 8 projects and secondary on 3 projects.</p>",
+      "To__c": "2022-10-07",
+      "Type__c": "Job"
+    },
+    {
+      "attributes": {
+        "type": "Resume_Entry__c",
+        "referenceId": "Resume_Entry__cRef3"
+      },
+      "Name": "Postmates",
+      "From__c": "2017-10-16",
+      "Location__c": "San Francisco, CA",
+      "Logo__c": "postmates.jpg",
+      "Resume__c": "@Resume__cRef1",
+      "Role__c": "Salesforce Engineer",
+      "Skills__c": "Apex;Aura;GitHub;Heroku;LWC;Scratch Orgs;SFDX",
+      "Summary__c": "<p>As the company’s first Salesforce hire, I executed full lifecycle projects from design to delivery.</p><p>A few projects include: <em>Lightning Experience Migration, SOX Compliance and Scalable Account Hierarchies.</em></p>",
+      "To__c": "2020-02-28",
+      "Type__c": "Job"
+    },
+    {
+      "attributes": {
+        "type": "Resume_Entry__c",
+        "referenceId": "Resume_Entry__cRef4"
+      },
+      "Name": "UC Berkeley",
+      "From__c": "2011-08-18",
+      "Location__c": "Berkeley, CA",
+      "Logo__c": "uc-berkeley.png",
+      "Resume__c": "@Resume__cRef1",
+      "Role__c": "BA Political Science",
+      "Skills__c": null,
+      "Summary__c": null,
+      "To__c": "2013-05-17",
+      "Type__c": "Education"
+    },
+    {
+      "attributes": {
+        "type": "Resume_Entry__c",
+        "referenceId": "Resume_Entry__cRef5"
+      },
+      "Name": "Recruitment Experience",
+      "From__c": "2013-10-07",
+      "Location__c": "San Francisco, CA",
+      "Logo__c": null,
+      "Resume__c": "@Resume__cRef1",
+      "Role__c": "Salesforce Recruiter",
+      "Skills__c": null,
+      "Summary__c": "<p>Became a Salesforce enthusiast at Dreamforce 2013 when I attended as a recruiter. I began teaching myself Salesforce and eventually helped start a Salesforce staffing firm that generated $1m of revenue in the first year.</p>",
+      "To__c": "2016-05-13",
+      "Type__c": "Job"
+    },
+    {
+      "attributes": {
+        "type": "Resume_Entry__c",
+        "referenceId": "Resume_Entry__cRef6"
+      },
+      "Name": "Splunk",
+      "From__c": "2020-03-02",
+      "Location__c": "San Francisco, CA",
+      "Logo__c": "splunk.webp",
+      "Resume__c": "@Resume__cRef1",
+      "Role__c": "Salesforce Engineer",
+      "Skills__c": "Apex;GitLab;SFDX;SOQL;TypeScript",
+      "Summary__c": "<p>Designed and implemented a solution to reduce SOQL query utilization in triggers.</p>",
+      "To__c": "2020-06-26",
+      "Type__c": "Job"
+    }
+  ]
+}

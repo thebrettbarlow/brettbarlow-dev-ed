@@ -39,14 +39,10 @@ sfdx force:source:deploy \
   --metadata=AuraDefinitionBundle,ApexClass,ApexTrigger,Flexipage,Layout,LightningComponentBundle,CustomObject,PermissionSet,StaticResource,CustomTab,SharingRules
 echo ""
 
-echo "Deploying Experience Cloud Site Metadata..."
-sfdx force:source:deploy \
-  --metadata=ExperienceBundle,NavigationMenu,Network,ApexPage,Profile,CustomSite
-echo ""
-
 echo "Assigning Permission Sets..."
 sfdx force:user:permset:assign \
   --permsetname=Projects_User
+
 sfdx force:user:permset:assign \
   --permsetname=Resume_User
 echo ""
@@ -54,6 +50,15 @@ echo ""
 echo "Importing sample data..."
 sfdx force:data:tree:import \
   --plan=data/Project__c-plan.json
+
+sfdx force:data:tree:import \
+  --plan=data/Resume__c-Resume_Entry__c-plan.json
+echo ""
+
+# The Resume__c LWC hits a GACK when deploying if the resume record isn't created first
+echo "Deploying Experience Cloud Site Metadata..."
+sfdx force:source:deploy \
+  --metadata=ExperienceBundle,NavigationMenu,Network,ApexPage,Profile,CustomSite
 echo ""
 
 echo "Opening org..." && \

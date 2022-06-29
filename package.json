@@ -31,6 +31,7 @@
     "prepare": "husky install",
     "prettier": "prettier --write '**/*.{cls,trigger}' '**/lwc/**/*.{css,html,js}' '**/*.{json,md,yml}'",
     "sf:open": "sfdx force:org:open",
+    "sf:deploy": "sfdx force:source:deploy",
     "sf:retrieve": "sfdx force:source:retrieve",
     "sf:retrieve:community": "sfdx force:source:retrieve --metadata=ExperienceBundle,Network,CustomSite,NavigationMenu,CspTrustedSite",
     "sf:validate": "sfdx force:source:deploy --checkonly --sourcepath=force-app --testlevel=RunLocalTests --wait=10",
