@@ -2,8 +2,7 @@ import { LightningElement, api, wire } from 'lwc';
 import { NavigationMixin } from 'lightning/navigation';
 import { CurrentPageReference } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import HAMBURGER_ICON from '@salesforce/resourceUrl/hamburgerIcon';
-import X_ICON from '@salesforce/resourceUrl/xIcon';
+import WEBSITE_ASSETS from '@salesforce/resourceUrl/website';
 import getNavigationMenuItems from '@salesforce/apex/NavigationMenuItemsController.getNavigationMenuItems';
 import isGuestUser from '@salesforce/user/isGuest';
 import basePath from '@salesforce/community/basePath';
@@ -18,8 +17,8 @@ export default class Header extends NavigationMixin(LightningElement) {
   publishedState;
   showHamburgerMenu;
 
-  hamburgerIcon = HAMBURGER_ICON;
-  xIcon = X_ICON;
+  hamburgerIcon = `${WEBSITE_ASSETS}/hamburger-icon.png`;
+  xIcon = `${WEBSITE_ASSETS}/x-icon.png`;
 
   @wire(getNavigationMenuItems, {
     menuName: '$navigationMenu',

@@ -1,6 +1,5 @@
 import { LightningElement } from 'lwc';
-import HEADSHOT from '@salesforce/resourceUrl/headshot';
-
+import WEBSITE_ASSETS from '@salesforce/resourceUrl/website';
 export default class About extends LightningElement {
-  headshot = HEADSHOT;
+  headshot = `${WEBSITE_ASSETS}/headshot.jpg`;
 }
