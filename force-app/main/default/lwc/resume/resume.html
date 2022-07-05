@@ -1,4 +1,13 @@
 <template>
+  <!-- TODO: Spinner shows over the error.
+        Consider making a utility component that handles this.-->
+  <template if:false={resume.data}>
+    <lightning-spinner
+      alternative-text="Loading"
+      variant="brand"
+      size="medium"
+    ></lightning-spinner>
+  </template>
   <template if:true={resume.error}>{resume.error}</template>
   <template if:true={resume.data}>
     <div class="slds-grid slds-grid_align-center">
