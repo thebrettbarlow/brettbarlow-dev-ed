@@ -36,6 +36,7 @@ jobs:
 
       - name: Get Changed Experience Cloud Metadata
         id: changed-experience-cloud-metadata
+        if: ${{ github.event_name != 'schedule' }}
         uses: tj-actions/changed-files@v22.2
         with:
           files: |
