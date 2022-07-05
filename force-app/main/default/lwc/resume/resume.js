@@ -39,6 +39,10 @@ export default class Resume extends LightningElement {
   })
   resume;
 
+  get isResumeLoaded() {
+    return this.resume;
+  }
+
   @wire(getUniqueSkillsFromResumeEntries, { resumeId: '$recordId' })
   skills;
 
