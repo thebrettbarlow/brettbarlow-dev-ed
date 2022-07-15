@@ -1,7 +1,6 @@
 /**
- * Created by brettbarlow on 7/14/22.
+ * Tests for {@link PrizeWinnerRestResource}.
  */
-
 @IsTest
 private class PrizeWinnerRestResourceTest {
   @IsTest
@@ -9,14 +8,10 @@ private class PrizeWinnerRestResourceTest {
     String name = 'prize-name';
     String firstName = 'first-name';
     String lastName = 'last-name';
-    RestRequest request = new RestRequest();
-    //    request.requestURI = '/services/apexrest/prize-winner/';
-    //    request.httpMethod = 'POST';
-    //    request.addHeader('Content-Type', 'application/json');
-    request.requestBody = Blob.valueOf(
+    RestContext.request = new RestRequest();
+    RestContext.request.requestBody = Blob.valueOf(
       JSON.serialize(buildPrizeWinnerWrapper(name, firstName, lastName))
     );
-    RestContext.request = request;
     RestContext.response = new RestResponse();
 
     PrizeWinnerRestResource.writePrizeRecord();
@@ -28,7 +23,6 @@ private class PrizeWinnerRestResourceTest {
     ];
     System.assertEquals(1, prizeWinners.size());
     Prize_Winner__c prizeWinner = prizeWinners[0];
-
     Id prizeWinnerRecordId = response.responseBody.toString();
     System.assertEquals(prizeWinnerRecordId, prizeWinner.Id);
     System.assertEquals(name, prizeWinner.Name);
