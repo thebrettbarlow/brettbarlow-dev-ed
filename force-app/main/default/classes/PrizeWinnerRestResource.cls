@@ -3,6 +3,9 @@
  */
 @RestResource(UrlMapping='/prize-winner/')
 global with sharing class PrizeWinnerRestResource {
+  /**
+   * Writes a {@link Prize_Winner__c} record and returns its {@link Id}.
+   */
   @HttpPost
   global static void writePrizeRecord() {
     // Alternatively we could: global static void writePrizeRecord(String body)
